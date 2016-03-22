@@ -1,5 +1,4 @@
-
 #Hello, World!
 
-I'm a little busy right now building this site's new theme.
-Contact me  on [twitter](http://twitter.com/ramidem) or maybe [email](mailto:im.ramidem@gmail.com) me.
+A simple personal page for someone like me who is just starting to learn about web development.
+More contents soon.
