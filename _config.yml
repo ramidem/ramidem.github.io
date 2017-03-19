@@ -1,0 +1,14 @@
+title: Med Aduh
+description: Self-taught web developer from the Philippines
+baseurl:  ""
+url: ""
+
+twitter: ramidem
+github: ramidem
+
+#permalink:
+#exclude:  _drafts
+markdown: kramdown
+
+gem:
+  - jekyll-feed

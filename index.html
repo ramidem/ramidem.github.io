@@ -1,38 +1,20 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Med Aduh</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300" rel="stylesheet">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
-  <body>
-    <div class="container">
-      <div class="main">
-        <div class="logo">
-          <a href="http://ramidem.me/"><img src="svg/ma.svg" alt="Med Aduh"></a>
-        </div>
-        <h1 id="header">Hello. I'm Med Aduh.</h1>
-        <p class="slogan">Web Developer from the Philippines.</p>
-        <div class="links">
-          <ul class="links_left">
-            <h2 class="nav_title right">Navigate</h2>
-            <li class="right navs"><a href="works.html">works</a></li>
-            <li class="right navs"><a href="blog.html">blog</a></li>
-          </ul>
-          <ul class="links_right">
-            <h2 class="nav_title left">Follow</h2>
-            <li class="left navs"><a href="https://twitter.com/ramidem">twitter</a></li>
-            <li class="left navs"><a href="https://github.com/ramidem">github</a></li>
-          </ul>
-        </div>
-        <div class="footer">
-          <p>&copy; 2017, <a href="http://ramidem.me/">Med Aduh</a>. Made in the Philippines.</p>
-          <p>Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> and hosted on <a href="https://github.com/" target="_blank">Github</a>.</p>
-        </div>
-      </div><!-- .main -->
-    </div><!-- .container -->
-  </body>
-</html>
+---
+layout: default
+---
+
+<div id="lede">
+  <div class="wrapper">
+    <h2>Web Developer from the Philippines. <br>I <em>like</em> coffee, <a href="https://twitter.com/{{ site.twitter }}">blue birds</a> and <a href="https://github.com/{{ site.github }}">octocats</a>.</h2>
+  </div>
+</div>
+<div class="wrapper">
+  <p>Hello,</p>
+  <p>Welcome to my humble home on the Internet. This is a work in progress. Thus, some pages are still without meaningful content.</p>
+  <p>Anyhow, <em>*soon</em> you can check out the my works on the <a href="{{ site.url }}/projects.html">Projects page</a>. Read more about me on the <a href="{{ site.url }}/dimar.html">About page</a>.
+    All archived articles are on the <a href="{{ site.url }}/blog.html">Blog page</a>. The recent article I wrote is "{% for post in site.posts limit:1 %}<a href="{{ post.url}}">{{ post.title }}</a>{% endfor %}".</p>
+  <p>Do you have a project that you need some help with? Shoot me an <a href="mailto:im.ramidem@gmail.com?subject=hello">email</a>.</p>
+  <p>Navigate through the pages using the links bellow. Follow me on <a href="https://twitter.com/{{ site.twitter }}">twitter</a> and or <a href="https://github.com/{{ site.github }}">github</a>.</p>
+  <p>Cheers,</p>
+  <p>Med</p>
+  <p><a href="{{ site.url}}/atom.xml">Suscribe to RSS</a></p>
+</div>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+    <main aria-label="Content" class="page-content">
+      <header class="site-header " role="banner">
+        <div class="wrapper">
+          <div class="logo-container">
+            {% if page.url == "/" %}
+            <a href="{{ site.url }}/dimar.html">
+              <img src="{{ site.url }}/assets/MA-ambigram-circle.svg" alt="Med Aduh Logo">
+            </a>
+            <span class="tooltip">About</span>
+            {% else %}
+            <a href="{{ site.url }}">
+              <img src="{{ site.url }}/assets/MA-ambigram-circle.svg" alt="Med Aduh Logo">
+            </a>
+            <span class="tooltip">Home</span>
+            {% endif %}
+
+          </div>
+          <div class="author-info">
+            <h1 class="author">{{ site.title }}</h1>
+            <p class="slogan">@ramidem | autodidact | coder</p>
+          </div>
+        </div>
+      </header>
+      {{ content }}
+    </main>
+      {% include footer.html %}
+  </body>
+</html>

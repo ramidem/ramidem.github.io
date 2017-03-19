@@ -1,0 +1,17 @@
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% include favicons.html %}
+  {% if page.title %}
+  <title>{{ page.title }} &mdash; {{ site.title }}</title>
+  {% else %}
+  <title>{{ site.title }}</title>
+  {% endif %}
+  <meta content="{{ site.description }}" name="{{ site.title }}">
+  <link href="https://fonts.googleapis.com/css?family=Oswald:300,400" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400i,700,700i" rel="stylesheet">
+  <link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
+  <link rel="stylesheet" href="{{ site.url }}/css/styles.css">
+  <link href="/feed.xml" rel="alternate" title="{{ site.description }}" type="application/rss+xml">
+</head>

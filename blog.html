@@ -1,27 +1,19 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Med Aduh</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300" rel="stylesheet">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <style media="screen">
-      p.message {
-        margin-bottom: 30px;
-      }
-      a.home {
-        font-size: 24px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="main">
-        <p class="message">This will eventually turn into a blog. Promise 😄</p>
-        <a href="http://ramidem.me/" class="home">🏠</a>
-      </div>
-    </div>
-  </body>
-</html>
+---
+layout: default
+title: Blog
+---
+
+<div id="lede">
+  <div class="wrapper">
+    <h2 class="page-title post-title">Blog.</h2>
+  </div>
+</div>
+<div class="wrapper">
+  <p>This is where the magic of writing happens.</p>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+    <li><a href="{{ post.url }}">{{ post.title}}</a></li>
+    {% endfor%}
+  </ul>
+</div>
