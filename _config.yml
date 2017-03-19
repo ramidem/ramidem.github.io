@@ -6,9 +6,6 @@ url: ""
 twitter: ramidem
 github: ramidem
 
-#permalink:
+permalink: /:title
 #exclude:  _drafts
 markdown: kramdown
-
-gem:
-  - jekyll-feed
