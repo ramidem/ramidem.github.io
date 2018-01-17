@@ -9,3 +9,5 @@ github: ramidem
 permalink: /:title
 #exclude:  _drafts
 markdown: kramdown
+
+include: .well_known
