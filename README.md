@@ -1,14 +1,7 @@
 # Hello, World!
 
-Welcome to the sourcecode of my Internet home.
+My personal site is powered by [Jekyll](http://jekyllrb.com) and uses [Compass](http://excentris.net/compass/) theme - a simple and elegant personal landing page that can be easily deployed to [GitHub Pages](https://pages.github.com/).
 
-So, one day, I just decided to put up this blog and keep working on it until I become satisfied - I am sure I won't be.
+## How to use Compass
 
-If I have to wait for that perfect time to come up with the perfect blog/website, nothing will really happen. With this simple website I could finally get started and confidently call myself a Web Developer.
-
-
-Cheers,
-
-Med
-
-follow me on [twitter](https://twitter.com/ramidem)
+Check out the [repository](https://github.com/excentris/compass)

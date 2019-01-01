@@ -1,20 +1,29 @@
 ---
-layout: default
+layout: base
 ---
-
-<div id="lede">
-  <div class="wrapper">
-    <h2>Web Developer from the Philippines. <br>I <em>like</em> coffee, <a href="https://twitter.com/{{ site.twitter }}">blue birds</a> and <a href="https://github.com/{{ site.github }}">octocats</a>.</h2>
-  </div>
-</div>
 <div class="wrapper">
-  <p>Hello,</p>
-  <p>Welcome to my humble home on the Internet. This is a work in progress. Thus, some pages are still without meaningful content.</p>
-  <p>Anyhow, <em>*soon</em> you can check out the my works on the <a href="{{ site.url }}/projects.html">Projects page</a>. Read more about me on the <a href="{{ site.url }}/dimar.html">About page</a>.
-    All archived articles are on the <a href="{{ site.url }}/blog.html">Blog page</a>. The recent article I wrote is "{% for post in site.posts limit:1 %}<a href="{{ post.url}}">{{ post.title }}</a>{% endfor %}".</p>
-  <p>Do you have a project that you need some help with? Shoot me an <a href="mailto:im.ramidem@gmail.com?subject=hello">email</a>.</p>
-  <p>Navigate through the pages using the links below. Follow me on <a href="https://twitter.com/{{ site.twitter }}">twitter</a> and or <a href="https://github.com/{{ site.github }}">github</a>.</p>
-  <p>Cheers,</p>
-  <p>Med</p>
-  <p><a href="{{ site.url}}/atom.xml">Suscribe to RSS</a></p>
+    <header>
+        {% if site.compass.logo %}
+        <div class="logo-container">
+          <img class="logo" src="{{ site.baseurl }}{{ site.compass.logo }}" alt="{{ site.compass.author }} - {{ site.compass.tagline }}">
+          <!-- <a class="logo" href="{{ page.baseurl }}" style="background-image: url('{{ site.baseurl }}{{ site.compass.logo }}')"></a> -->
+        </div>
+        {% endif %}
+
+        {% if site.compass.author %}
+        <div class="author-container"><h1>{{ site.compass.author }}</h1></div>
+        {% endif %}
+
+        {% if site.compass.tagline %}
+        <div class="tagline-container"><p>Untitled.</p></div>
+        {% endif %}
+        
+    </header>
+    <main>
+      {% if site.compass.include_content %}
+      <div class="content">
+        {% include content.html %}
+      </div>
+      {% endif %}
+    </main>
 </div>

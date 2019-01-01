@@ -1,4 +1,0 @@
-This is a Brave Payments publisher verification file.
-
-Domain: ramidem.github.io
-Token: 4bd680cdfb97074e02a2d1da7285255957b52ebf99499e171319aba908ff3379
