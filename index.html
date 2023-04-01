@@ -2,28 +2,17 @@
 layout: base
 ---
 <div class="wrapper">
-    <header>
-        {% if site.compass.logo %}
-        <div class="logo-container">
-          <img class="logo" src="{{ site.baseurl }}{{ site.compass.logo }}" alt="{{ site.compass.author }} - {{ site.compass.tagline }}">
-          <!-- <a class="logo" href="{{ page.baseurl }}" style="background-image: url('{{ site.baseurl }}{{ site.compass.logo }}')"></a> -->
-        </div>
-        {% endif %}
+  <main>
+    {% if site.author %}
+    <h1>{{ site.author }}</h1>
+    {% endif %}
 
-        {% if site.compass.author %}
-        <div class="author-container"><h1>{{ site.compass.author }}</h1></div>
-        {% endif %}
+    <p>Software Developer <a href="https://www.symph.co/">@Symph</a> from the Philippines.</p>
 
-        {% if site.compass.tagline %}
-        <div class="tagline-container"><p>Full-stack Developer</p></div>
-        {% endif %}
-        
-    </header>
-    <main>
-      {% if site.compass.include_content %}
-      <div class="content">
-        {% include content.html %}
-      </div>
-      {% endif %}
-    </main>
+    <ul>
+      <li>🐦 <a href="https://twitter.com/ramidem">twitter</a></li>
+      <li>🐙 <a href="https://github.com/ramidem">github</a></li>
+      <li>📝 <a href="{{ site.url }}/stuff-and-nonsense">stuff &amp; non-sense</a></li>
+    </ul>
+  </main>
 </div>

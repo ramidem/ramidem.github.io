@@ -1,10 +1,8 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if site.compass.author %}{{ site.compass.author }} &#8226; {% endif %}{{ site.compass.tagline | strip_html }}</title>
-
-  <!-- <link rel="apple-touch-icon" href="{{ site.baseurl }}{{ site.compass.logo }}"/>
-  <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="{{ site.url }}{{ site.baseurl }}/favicon.ico" /> -->
+  <title>{% if site.author %}{{ site.author }} &#8226; {% endif %}{{ site.tagline | strip_html
+    }}</title>
 
   <link rel="apple-touch-icon" sizes="57x57" href="{{ site.baseurl }}/assets/icons/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="{{ site.baseurl }}/assets/icons/apple-icon-60x60.png">
@@ -15,7 +13,7 @@
   <link rel="apple-touch-icon" sizes="144x144" href="{{ site.baseurl }}/assets/icons/apple-icon-144x144.png">
   <link rel="apple-touch-icon" sizes="152x152" href="{{ site.baseurl }}/assets/icons/apple-icon-152x152.png">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/assets/icons/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="{{ site.baseurl }}/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ site.baseurl }}/assets/icons/android-icon-192x192.png">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/assets/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="{{ site.baseurl }}/assets/icons/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/assets/icons/favicon-16x16.png">
@@ -24,27 +22,26 @@
   <meta name="msapplication-TileImage" content="{{ site.baseurl }}/assets/icons/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
 
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/normalize.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
-  <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/reset.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
   <link href='https://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
 
   <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
 
-  <meta name="author" content="{{ site.compass.author }}">
-  <meta name="description" content="{{ site.compass.tagline }}"/>
+  <meta name="author" content="{{ site.author }}">
+  <meta name="description" content="{{ site.tagline }}" />
 
   <!-- Open Graph tags -->
-  <meta property="og:type" content="website"/>
-  <meta property="og:title" content="{{ site.compass.tagline }}"/>
-  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}"/>
-  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}{{ site.compass.logo }}"/>
-  <meta property="og:description" content="{{ site.compass.description }}"/>
-  <meta property="og:site_name" content="{{ site.compass.tagline }}">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ site.tagline }}" />
+  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}{{ site.logo }}" />
+  <meta property="og:description" content="{{ site.description }}" />
+  <meta property="og:site_name" content="{{ site.tagline }}">
 
   <!-- Twitter Card tags -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="{{ site.compass.tagline }}">
+  <meta name="twitter:title" content="{{ site.tagline }}">
   {% if site.twitter.site %}
   <meta name="twitter:site" content="{{ site.twitter.site }}">
   {% endif %}
@@ -52,10 +49,10 @@
   <meta name="twitter:creator" content="{{ site.twitter.creator }}">
   {% endif %}
   <meta name="twitter:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
-  <meta name="twitter:description" content="{{ site.compass.description }}">
-  <meta name="twitter:image:src" content="{{ site.url }}{{ site.baseurl }}{{ site.compass.logo }}">
+  <meta name="twitter:description" content="{{ site.description }}">
+  <meta name="twitter:image:src" content="{{ site.url }}{{ site.baseurl }}{{ site.logo }}">
 
-  {% if site.compass.include_analytics %}
+  {% if site.include_analytics %}
   {% include analytics.html %}
   {% endif %}
 </head>

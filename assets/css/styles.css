@@ -1,0 +1,45 @@
+body {
+  background-color: whitesmoke;
+  color: #666;
+  font-size: 2.5vw;
+}
+
+.wrapper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 2vw;
+  border: 1vw solid #eee;
+}
+
+main {
+  margin-top: auto;
+  width: 100%;
+}
+
+h1 {
+  color: #444;
+  font-size: 5vw;
+  margin-bottom: 0;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 2vw;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 2vw;
+}
+
+li:last-child {
+  margin-right: 0;
+}
