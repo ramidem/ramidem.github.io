@@ -1,8 +1,7 @@
 url: "https://ramidem.github.io/"
 baseurl: ""
 author: "Med Aduh"
-tagline: "A self-taught Software Developer from the Philippines."
-twitter: "ramidem"
+tagline: "Web Developer from the Philippines."
 
 exclude: ["CNAME", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
 
