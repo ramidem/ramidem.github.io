@@ -14,8 +14,8 @@ body {
   display: flex;
   flex-direction: column;
 
-  padding: 2vw;
-  border: 1vw solid #eee;
+  padding: 3vw;
+  border: 2vw solid #eee;
 }
 
 main {
@@ -25,21 +25,18 @@ main {
 
 h1 {
   color: #444;
-  font-size: 128px;
   margin-bottom: 0;
 }
 
 p {
   margin-top: 0;
   margin-bottom: 2vw;
-  font-size: 14px;
 }
 
 li {
   list-style: none;
   display: inline-block;
   margin-right: 2vw;
-  font-size: 14px;
 }
 
 li:last-child {
@@ -48,18 +45,6 @@ li:last-child {
 
 @media (max-width: 1290px) {
   body {
-    font-size: 2.5vw;
-  }
-
-  h1 {
     font-size: 5vw;
-  }
-
-  p {
-    font-size: 2vw;
-  }
-
-  li {
-    font-size: 2vw;
   }
 }
