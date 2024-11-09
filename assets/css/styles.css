@@ -1,7 +1,7 @@
 body {
   background-color: whitesmoke;
   color: #666;
-  font-size: 16px;
+  font-size: 58px;
 }
 
 .wrapper {
@@ -45,6 +45,6 @@ li:last-child {
 
 @media (max-width: 1290px) {
   body {
-    font-size: 5vw;
+    font-size: 4.5vw;
   }
 }
