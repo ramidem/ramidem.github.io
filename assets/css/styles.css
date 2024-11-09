@@ -1,7 +1,7 @@
 body {
   background-color: whitesmoke;
   color: #666;
-  font-size: 64px;
+  font-size: 16px;
 }
 
 .wrapper {
@@ -32,12 +32,14 @@ h1 {
 p {
   margin-top: 0;
   margin-bottom: 2vw;
+  font-size: 14px;
 }
 
 li {
   list-style: none;
   display: inline-block;
   margin-right: 2vw;
+  font-size: 14px;
 }
 
 li:last-child {
@@ -46,10 +48,18 @@ li:last-child {
 
 @media (max-width: 1290px) {
   body {
-    font-size: 1vw;
+    font-size: 2.5vw;
   }
 
   h1 {
-    font-size: 1vw;
+    font-size: 5vw;
+  }
+
+  p {
+    font-size: 2vw;
+  }
+
+  li {
+    font-size: 2vw;
   }
 }
