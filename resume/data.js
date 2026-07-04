@@ -109,12 +109,12 @@ window.resumeData = {
       ],
       highlights: [
         {
-          organization: "HRIS / Payroll Platform",
-          location: "Next.js / Firebase / CASL",
+          organization: "Healthcare Forms Companion",
+          location: "PDF previews / Auth / Forms",
           role: "AI Product Engineer",
-          dates: "Feb 2026 - Jun 2026",
+          dates: "Jun 2026",
           bullets: [
-            "Built AI-assisted HRIS/payroll workflows across employee records, time tracking, leave approvals, payroll, RBAC, documentation, reports, and audit trails."
+            "Shipped patient/admin form workflows with authenticated PDF previews, editable fields, invite flows, and duplicate-save protections."
           ]
         },
         {
@@ -127,12 +127,22 @@ window.resumeData = {
           ]
         },
         {
-          organization: "Healthcare Forms Companion",
-          location: "PDF previews / Auth / Forms",
+          organization: "HRIS / Payroll Platform",
+          location: "Next.js / Firebase / CASL",
           role: "AI Product Engineer",
-          dates: "Jun 2026",
+          dates: "Feb 2026 - Jun 2026",
           bullets: [
-            "Shipped patient/admin form workflows with authenticated PDF previews, editable fields, invite flows, and duplicate-save protections."
+            "Built AI-assisted HRIS/payroll workflows across employee records, time tracking, leave approvals, payroll, RBAC, documentation, reports, and audit trails."
+          ]
+        },
+        {
+          organization: "Veterinary Clinic Platform",
+          location: "NestJS / Next.js / CASL",
+          role: "Software Engineer",
+          dates: "Jan 2026",
+          bullets: [
+            "Implemented CASL-based RBAC across NestJS and Next.js for platform admins, clinic owners, vets, staff, and pet owners.",
+            "Migrated role/clinic-membership checks with PostgreSQL/Drizzle schema changes, service-layer guards, and API client updates."
           ]
         },
         {
@@ -153,16 +163,6 @@ window.resumeData = {
           bullets: [
             "Led Strapi 5 CMS work for content, marketplace pages, opportunity settings, custom admin plugins, and verification workflows.",
             "Integrated platform APIs through TypeScript services, React admin hooks, JWT review tokens, and status endpoints."
-          ]
-        },
-        {
-          organization: "Veterinary Clinic Platform",
-          location: "NestJS / Next.js / CASL",
-          role: "Software Engineer",
-          dates: "Jan 2026",
-          bullets: [
-            "Implemented CASL-based RBAC across NestJS and Next.js for platform admins, clinic owners, vets, staff, and pet owners.",
-            "Migrated role/clinic-membership checks with PostgreSQL/Drizzle schema changes, service-layer guards, and API client updates."
           ]
         },
         {
