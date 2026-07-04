@@ -103,7 +103,7 @@ h1 {
 .home-link,
 .download-button {
   align-items: center;
-  background: rgb(255 255 255 / 72%);
+  background: transparent;
   border: 0;
   border-radius: 8px;
   color: var(--ink);
@@ -121,8 +121,9 @@ h1 {
     color 180ms ease;
 }
 
+.home-link:hover,
 .download-button:hover {
-  background: #ffffff;
+  background: rgb(255 255 255 / 44%);
 }
 
 .download-button svg {
