@@ -107,7 +107,6 @@ h1 {
 .home-link,
 .download-button {
   align-items: center;
-  background: transparent;
   border: 0;
   border-radius: 8px;
   color: var(--ink);
@@ -121,13 +120,28 @@ h1 {
   padding: 9px 13px;
   text-decoration: none;
   transition:
+    border-color 180ms ease,
     background 180ms ease,
     color 180ms ease;
 }
 
-.home-link:hover,
-.download-button:hover {
+.home-link {
+  background: transparent;
+  min-height: 40px;
+}
+
+.home-link:hover {
   background: rgb(255 255 255 / 44%);
+}
+
+.download-button {
+  background: #ffffff;
+  border: 1px solid rgb(17 22 26 / 14%);
+}
+
+.download-button:hover {
+  background: #f9fafb;
+  border-color: rgb(17 22 26 / 26%);
 }
 
 .download-button svg {
@@ -138,10 +152,6 @@ h1 {
   stroke-linejoin: round;
   stroke-width: 2;
   width: 17px;
-}
-
-.home-link {
-  min-height: 40px;
 }
 
 .contact-line {
