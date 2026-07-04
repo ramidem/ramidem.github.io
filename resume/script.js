@@ -1,6 +1,5 @@
 (function () {
   var data = window.resumeData;
-  var selectedLens = "general";
 
   function clear(node) {
     while (node.firstChild) {
@@ -19,29 +18,12 @@
     return node;
   }
 
-  function getLens() {
-    return data.lenses.find(function (lens) {
-      return lens.id === selectedLens;
-    }) || data.lenses[0];
-  }
-
-  function projectMatches(project, lens) {
-    if (lens.id === "general") {
-      return true;
-    }
-
-    return project.tags.some(function (tag) {
-      return lens.tags.indexOf(tag) !== -1;
-    });
-  }
-
   function renderHeader() {
     var profile = data.profile;
     var contact = document.querySelector("[data-contact]");
 
     document.querySelector("[data-name]").textContent = profile.name;
     document.querySelector("[data-headline]").textContent = profile.headline;
-    document.querySelector("[data-summary]").textContent = profile.summary;
 
     clear(contact);
     contact.appendChild(el("span", "", profile.location));
@@ -52,29 +34,6 @@
     github.rel = "noreferrer";
     github.target = "_blank";
     contact.appendChild(github);
-  }
-
-  function renderLenses() {
-    var lens = getLens();
-    var buttons = document.querySelector("[data-lenses]");
-
-    document.querySelector("[data-focus-summary]").textContent = lens.summary;
-    clear(buttons);
-
-    data.lenses.forEach(function (item) {
-      var button = el("button", "focus-button", item.label);
-      button.type = "button";
-      button.setAttribute("data-lens", item.id);
-      button.setAttribute("aria-pressed", item.id === selectedLens ? "true" : "false");
-      if (item.id === selectedLens) {
-        button.classList.add("is-active");
-      }
-      button.addEventListener("click", function () {
-        selectedLens = item.id;
-        render();
-      });
-      buttons.appendChild(button);
-    });
   }
 
   function renderExperience() {
@@ -90,27 +49,6 @@
         summary: item.summary,
         bullets: item.bullets,
         highlights: item.highlights || []
-      }));
-    });
-  }
-
-  function renderProjects() {
-    var lens = getLens();
-    var list = document.querySelector("[data-projects]");
-    var projects = data.projects.filter(function (project) {
-      return projectMatches(project, lens);
-    });
-
-    clear(list);
-
-    projects.forEach(function (project) {
-      list.appendChild(renderEntry({
-        organization: project.name,
-        location: project.tech.slice(0, 4).join(" / "),
-        role: project.role,
-        dates: project.dates,
-        summary: project.summary,
-        bullets: project.bullets
       }));
     });
   }
@@ -186,9 +124,7 @@
 
   function render() {
     renderHeader();
-    renderLenses();
     renderExperience();
-    renderProjects();
     renderSkills();
   }
 

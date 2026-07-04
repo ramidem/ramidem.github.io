@@ -56,7 +56,7 @@ textarea {
 .resume-toolbar {
   display: flex;
   gap: 8px;
-  justify-content: flex-start;
+  justify-content: flex-end;
   margin: 0 auto 32px;
   max-width: 8.5in;
 }
@@ -97,39 +97,38 @@ h1 {
   margin-bottom: 10px;
 }
 
-.icon-button {
+.download-button {
   align-items: center;
-  background: #ffffff;
-  border: 1px solid var(--line);
+  background: rgb(255 255 255 / 72%);
+  border: 0;
   border-radius: 8px;
   color: var(--ink);
   cursor: pointer;
   display: inline-flex;
   font-size: 0.88rem;
   font-family: var(--font-readable);
-  font-weight: 600;
+  font-weight: 800;
   gap: 8px;
   min-height: 40px;
-  padding: 9px 12px;
+  padding: 9px 13px;
   text-decoration: none;
   transition:
     background 180ms ease,
-    border-color 180ms ease,
-    transform 180ms ease;
+    color 180ms ease;
 }
 
-.icon-button:hover {
-  background: var(--field);
-  border-color: var(--ink);
-  transform: translateY(-1px);
+.download-button:hover {
+  background: #ffffff;
 }
 
-.icon-button.primary {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #ffffff;
-  justify-content: center;
-  width: 100%;
+.download-button svg {
+  fill: none;
+  height: 17px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  width: 17px;
 }
 
 .contact-line {
@@ -281,55 +280,6 @@ h1 {
   padding-left: 5px;
 }
 
-.focus-panel {
-  padding-top: 18px;
-}
-
-.focus-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 10px;
-}
-
-.focus-button {
-  background: #ffffff;
-  border: 1px solid var(--soft-line);
-  border-radius: 8px;
-  color: var(--ink);
-  cursor: pointer;
-  font-size: 0.84rem;
-  font-weight: 700;
-  min-height: 34px;
-  padding: 7px 10px;
-}
-
-.focus-button:hover {
-  border-color: var(--ink);
-}
-
-.focus-button.is-active {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: #ffffff;
-}
-
-.extended-records {
-  color: var(--text);
-}
-
-.extended-records summary {
-  cursor: pointer;
-  font-size: 0.84rem;
-  font-weight: 800;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.extended-records[open] summary {
-  margin-bottom: 12px;
-}
-
 .skills dl {
   display: grid;
   gap: 2px;
@@ -349,106 +299,6 @@ h1 {
 .skills dd {
   color: #2b3034;
   margin: 0;
-}
-
-.toolbar-contact {
-  position: relative;
-}
-
-.toolbar-contact + .icon-button {
-  margin-left: auto;
-}
-
-.toolbar-contact summary {
-  align-items: center;
-  background: #ffffff;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  color: var(--ink);
-  cursor: pointer;
-  display: inline-flex;
-  font-size: 0.88rem;
-  font-family: var(--font-readable);
-  font-weight: 600;
-  gap: 8px;
-  list-style: none;
-  min-height: 40px;
-  padding: 9px 12px;
-  transition:
-    background 180ms ease,
-    border-color 180ms ease,
-    transform 180ms ease;
-}
-
-.toolbar-contact summary:hover {
-  background: var(--field);
-  border-color: var(--ink);
-  transform: translateY(-1px);
-}
-
-.toolbar-contact summary::-webkit-details-marker {
-  display: none;
-}
-
-.toolbar-contact-panel {
-  background: #ffffff;
-  border: 1px solid rgb(17 22 26 / 16%);
-  border-radius: 8px;
-  box-shadow: 0 8px 24px rgb(17 22 26 / 10%);
-  padding: 16px;
-  position: absolute;
-  right: 0;
-  top: calc(100% + 10px);
-  width: min(360px, calc(100vw - 32px));
-  z-index: 10;
-}
-
-.toolbar-contact-panel h2 {
-  font-size: 1rem;
-  margin-bottom: 6px;
-}
-
-.toolbar-contact-panel p {
-  align-items: center;
-  color: var(--muted);
-  display: flex;
-  font-size: 0.85rem;
-  gap: 6px;
-  margin-bottom: 12px;
-}
-
-.message-form {
-  display: grid;
-  gap: 12px;
-}
-
-.field-grid {
-  display: grid;
-  gap: 10px;
-  grid-template-columns: 1fr;
-}
-
-.message-form label {
-  color: var(--muted);
-  display: grid;
-  font-size: 0.82rem;
-  font-weight: 700;
-  gap: 6px;
-}
-
-.message-form input,
-.message-form textarea {
-  background: #ffffff;
-  border: 1px solid rgb(17 22 26 / 20%);
-  border-radius: 7px;
-  color: var(--ink);
-  padding: 10px 11px;
-  width: 100%;
-}
-
-.message-form textarea {
-  min-height: 126px;
-  resize: vertical;
 }
 
 @media (max-width: 1080px) {
@@ -476,17 +326,13 @@ h1 {
   .resume-toolbar {
     background: #ffffff;
     border-bottom: 1px solid rgb(17 22 26 / 12%);
-    justify-content: center;
+    justify-content: flex-end;
     margin: 0;
     max-width: none;
     padding: 10px;
     position: sticky;
     top: 0;
     z-index: 5;
-  }
-
-  .toolbar-contact + .icon-button {
-    margin-left: 0;
   }
 
   .entry-line {
@@ -530,11 +376,6 @@ h1 {
     gap: 16px;
     margin-left: 2px;
     padding-left: 12px;
-  }
-
-  .toolbar-contact-panel {
-    left: 0;
-    right: auto;
   }
 
   .skills dl div {

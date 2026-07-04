@@ -12,32 +12,12 @@
 <body>
   <main class="page-shell">
     <div class="resume-toolbar no-print" aria-label="Resume actions">
-      <details class="toolbar-contact">
-        <summary>Message</summary>
-        <div class="toolbar-contact-panel">
-          <h2>Message Med</h2>
-          <p><a href="mailto:im.ramidem@gmail.com">im.ramidem@gmail.com</a></p>
-          <form class="message-form" action="mailto:im.ramidem@gmail.com" method="post" enctype="text/plain">
-            <div class="field-grid">
-              <label>
-                Name
-                <input name="name" autocomplete="name">
-              </label>
-              <label>
-                Email
-                <input name="email" type="email" autocomplete="email">
-              </label>
-            </div>
-            <label>
-              Message
-              <textarea name="message"></textarea>
-            </label>
-            <button class="icon-button primary" type="submit">Open email draft</button>
-          </form>
-        </div>
-      </details>
-      <button class="icon-button" type="button" data-print>Print / Save PDF</button>
-      <a class="icon-button" href="data.js">Data</a>
+      <button class="download-button" type="button" data-print>
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14" />
+        </svg>
+        Download
+      </button>
     </div>
 
     <section class="resume-paper" aria-label="Resume">
@@ -46,17 +26,6 @@
         <p class="headline-line" data-headline></p>
         <p class="contact-line" data-contact></p>
       </header>
-
-      <section class="resume-section focus-panel no-print" aria-labelledby="focus">
-        <h2 id="focus">Focus</h2>
-        <p class="entry-summary" data-focus-summary></p>
-        <div class="focus-buttons" data-lenses></div>
-      </section>
-
-      <section class="resume-section" aria-labelledby="summary">
-        <h2 id="summary">Summary</h2>
-        <p class="entry-summary" data-summary></p>
-      </section>
 
       <section class="resume-section" aria-labelledby="experience">
         <h2 id="experience">Experience</h2>
@@ -67,14 +36,6 @@
         <h2 id="skills">Skills &amp; Interests</h2>
         <dl data-skills></dl>
       </section>
-
-      <details class="resume-section extended-records no-print">
-        <summary>Extended project records</summary>
-        <p class="entry-summary">
-          Additional public-safe project records are kept here for review, but are not part of the default resume.
-        </p>
-        <div class="entry-list" data-projects></div>
-      </details>
     </section>
   </main>
 
