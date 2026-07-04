@@ -88,7 +88,8 @@
         role: item.role,
         dates: item.dates,
         summary: item.summary,
-        bullets: item.bullets
+        bullets: item.bullets,
+        highlights: item.highlights || []
       }));
     });
   }
@@ -139,6 +140,22 @@
       bullets.appendChild(el("li", "", bullet));
     });
     article.appendChild(bullets);
+
+    if (item.highlights && item.highlights.length > 0) {
+      var nested = el("div", "nested-list");
+      item.highlights.forEach(function (highlight) {
+        nested.appendChild(renderEntry({
+          organization: highlight.organization,
+          location: highlight.location,
+          role: highlight.role,
+          dates: highlight.dates,
+          summary: "",
+          bullets: highlight.bullets,
+          highlights: []
+        }));
+      });
+      article.appendChild(nested);
+    }
 
     return article;
   }

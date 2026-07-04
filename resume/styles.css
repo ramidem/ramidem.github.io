@@ -201,6 +201,22 @@ h1 {
   break-inside: avoid;
 }
 
+.nested-list {
+  border-left: 1px solid var(--soft-line);
+  display: grid;
+  gap: 14px;
+  margin: 10px 0 0 4px;
+  padding-left: 14px;
+}
+
+.nested-list .entry h3 {
+  font-size: 0.96rem;
+}
+
+.nested-list .entry ul {
+  margin-top: 6px;
+}
+
 .entry-line {
   display: flex;
   gap: 18px;
@@ -296,6 +312,22 @@ h1 {
   background: var(--ink);
   border-color: var(--ink);
   color: #ffffff;
+}
+
+.extended-records {
+  color: var(--text);
+}
+
+.extended-records summary {
+  cursor: pointer;
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.extended-records[open] summary {
+  margin-bottom: 12px;
 }
 
 .skills dl {
@@ -492,6 +524,12 @@ h1 {
   .entry ul {
     margin-top: 12px;
     padding-left: 24px;
+  }
+
+  .nested-list {
+    gap: 16px;
+    margin-left: 2px;
+    padding-left: 12px;
   }
 
   .toolbar-contact-panel {

@@ -105,9 +105,48 @@ window.resumeData = {
       summary:
         "Client and product engineering across NDA platforms, using full-stack and AI-assisted workflows to ship operational software.",
       bullets: [
-        "Shipped production work across React, TypeScript, Next.js, NestJS, Firebase, Strapi, MySQL/PostgreSQL, and Google Cloud.",
-        "Maintained long-running financial services systems while also leading newer product builds in HRIS/payroll, operations, CMS, and admin tooling.",
-        "Worked across frontend product flows, service integration, authorization, reports, exports, generated clients, storage, and release validation."
+        "Shipped production work across React, TypeScript, Next.js, NestJS, Firebase, Strapi, MySQL/PostgreSQL, and Google Cloud."
+      ],
+      highlights: [
+        {
+          organization: "Financial Services Operations Platform",
+          location: "React / TypeScript / MySQL",
+          role: "Software Engineer",
+          dates: "Jan 2021 - Nov 2025",
+          bullets: [
+            "Maintained KYC, remittance, ShopSafe, vault, reporting, receipt, and checkout workflows across React, Node/NestJS, MySQL, and stored procedures.",
+            "Delivered bank/vault reports, fund-request receipts, OTP controls, branch pickup, and payment workflow fixes."
+          ]
+        },
+        {
+          organization: "CMS / Marketplace Admin Platform",
+          location: "Strapi / TypeScript / GCP",
+          role: "Project Lead / Software Engineer",
+          dates: "Jan 2025 - May 2025",
+          bullets: [
+            "Led Strapi 5 CMS work for content, marketplace pages, opportunity settings, custom admin plugins, and verification workflows.",
+            "Integrated platform APIs through TypeScript services, React admin hooks, JWT review tokens, and status endpoints."
+          ]
+        },
+        {
+          organization: "Veterinary Clinic Platform",
+          location: "NestJS / Next.js / CASL",
+          role: "Software Engineer",
+          dates: "Jan 2026",
+          bullets: [
+            "Implemented CASL-based RBAC across NestJS and Next.js for platform admins, clinic owners, vets, staff, and pet owners.",
+            "Migrated role/clinic-membership checks with PostgreSQL/Drizzle schema changes, service-layer guards, and API client updates."
+          ]
+        },
+        {
+          organization: "Interior Design Commerce Platform",
+          location: "Firebase / React / Konva",
+          role: "Contributing Software Engineer",
+          dates: "Nov 2020 - Mar 2021",
+          bullets: [
+            "Improved React/Firebase design, client review, upload, questionnaire, access-control, shop, checkout, voucher, and admin export workflows."
+          ]
+        }
       ]
     }
   ],
