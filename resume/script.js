@@ -40,15 +40,17 @@
     var list = document.querySelector("[data-experience]");
     clear(list);
 
-    data.experience.forEach(function (item) {
+    data.experience.forEach(function (item, index) {
       list.appendChild(renderEntry({
         organization: item.organization,
+        url: item.url,
         location: item.location,
         role: item.role,
         dates: item.dates,
         summary: item.summary,
         bullets: item.bullets,
-        highlights: item.highlights || []
+        highlights: item.highlights || [],
+        isClientWork: index > 0
       }));
     });
   }
@@ -58,8 +60,23 @@
     var heading = el("div", "entry-line entry-heading");
     var meta = el("div", "entry-line entry-meta");
     var bullets = el("ul");
+    var title = item.url ? el("a", "", item.organization) : el("h3", "", item.organization);
 
-    heading.appendChild(el("h3", "", item.organization));
+    if (item.isClientWork) {
+      article.className += " client-work";
+    }
+
+    if (item.url) {
+      title.href = item.url;
+      title.rel = "noreferrer";
+      title.target = "_blank";
+      var titleHeading = el("h3");
+      titleHeading.appendChild(title);
+      heading.appendChild(titleHeading);
+    } else {
+      heading.appendChild(title);
+    }
+
     if (item.location) {
       heading.appendChild(el("p", "", item.location));
     }
@@ -88,7 +105,7 @@
           role: highlight.role,
           dates: highlight.dates,
           summary: "",
-          bullets: highlight.bullets,
+          bullets: highlight.bullets.slice(0, 1),
           highlights: []
         }));
       });
@@ -104,21 +121,9 @@
 
     data.skills.forEach(function (skill) {
       var row = el("div");
-      row.appendChild(el("dt", "", skill.group));
-      row.appendChild(el("dd", "", skill.items.join(", ")));
+      row.className = "skill-row";
+      row.textContent = skill.group + ": " + skill.items.join(", ");
       list.appendChild(row);
-    });
-
-    var interests = el("div");
-    interests.appendChild(el("dt", "", "Interests"));
-    interests.appendChild(el("dd", "", "Product systems, developer experience, automation"));
-    list.appendChild(interests);
-  }
-
-  function bindActions() {
-    var printButton = document.querySelector("[data-print]");
-    printButton.addEventListener("click", function () {
-      window.print();
     });
   }
 
@@ -129,7 +134,6 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    bindActions();
     render();
   });
 })();

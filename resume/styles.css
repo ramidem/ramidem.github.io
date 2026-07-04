@@ -242,6 +242,12 @@ h1 {
   break-inside: avoid;
 }
 
+.entry.client-work {
+  border-left: 1px solid var(--soft-line);
+  margin-left: 8px;
+  padding-left: 16px;
+}
+
 .nested-list {
   border-left: 1px solid var(--soft-line);
   display: grid;
@@ -332,6 +338,11 @@ h1 {
 .skills dl div {
   display: flex;
   gap: 5px;
+}
+
+.skills .skill-row {
+  color: #2b3034;
+  display: block;
 }
 
 .skills dt {
@@ -428,13 +439,14 @@ h1 {
 
 @media print {
   @page {
-    margin: 0.55in;
+    margin: 0.35in;
     size: letter;
   }
 
   html,
   body {
     background: #ffffff;
+    font-family: var(--font-readable);
   }
 
   .no-print {
@@ -450,25 +462,116 @@ h1 {
   .resume-paper {
     background: #ffffff;
     box-shadow: none;
-    font-size: 10.5pt;
+    font-family: var(--font-readable);
+    font-size: 9pt;
+    line-height: 1.22;
     min-height: auto;
     padding: 0;
   }
 
+  h1,
+  .resume-section h2,
+  .entry h3 {
+    font-family: var(--font-readable);
+  }
+
   h1 {
-    font-size: 14pt;
+    font-size: 13pt;
+    margin-bottom: 4pt;
+  }
+
+  .resume-header {
+    border-bottom-width: 1.5pt;
+    padding-bottom: 7pt;
+  }
+
+  .headline-line {
+    font-size: 9.5pt;
+    line-height: 1.15;
+    margin-bottom: 4pt;
+  }
+
+  .contact-line {
+    font-size: 9pt;
+    line-height: 1.15;
   }
 
   .resume-section {
-    break-inside: avoid;
-    padding: 12pt 0 0;
+    padding: 8pt 0 0;
+  }
+
+  .resume-section h2 {
+    font-size: 8.5pt;
+    gap: 8pt;
+    margin-bottom: 7pt;
+  }
+
+  .entry,
+  .entry-list,
+  .nested-list {
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  .resume-section h2,
+  .entry-heading,
+  .entry-meta {
+    break-after: avoid;
+    page-break-after: avoid;
   }
 
   .entry-list {
-    gap: 12pt;
+    display: block;
+  }
+
+  .entry.client-work {
+    margin-left: 3pt;
+    padding-left: 8pt;
+  }
+
+  .entry + .entry,
+  .nested-list .entry + .entry {
+    margin-top: 7pt;
+  }
+
+  .nested-list {
+    display: block;
+    margin-top: 6pt;
+    padding-left: 10pt;
   }
 
   .entry ul {
-    margin-top: 6pt;
+    margin-top: 4pt;
+    padding-left: 18pt;
+  }
+
+  .entry li {
+    line-height: 1.25;
+    margin-bottom: 2pt;
+    padding-left: 2pt;
+  }
+
+  .entry h3 {
+    font-size: 9.5pt;
+    line-height: 1.15;
+  }
+
+  .entry-heading p {
+    font-size: 8.5pt;
+  }
+
+  .entry-meta {
+    font-size: 9pt;
+    margin-top: 1pt;
+  }
+
+  .entry-summary {
+    font-size: 9pt;
+    line-height: 1.25;
+    margin-top: 4pt;
+  }
+
+  .skills dl {
+    gap: 0;
   }
 }

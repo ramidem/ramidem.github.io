@@ -55,33 +55,16 @@ window.resumeData = {
   ],
   skills: [
     {
-      group: "Languages",
-      items: ["TypeScript", "JavaScript", "SQL"]
+      group: "Languages and frontend",
+      items: ["TypeScript", "JavaScript", "SQL", "React", "Next.js"]
     },
     {
-      group: "Web and services",
-      items: ["React", "Next.js", "Node.js", "NestJS", "Strapi", "Zod"]
+      group: "Backend, cloud, and data",
+      items: ["Node.js", "NestJS", "Firebase", "Google Cloud", "MySQL", "PostgreSQL", "Drizzle ORM", "Strapi"]
     },
     {
-      group: "Cloud and data",
-      items: [
-        "Google Cloud",
-        "Firebase",
-        "MySQL",
-        "PostgreSQL",
-        "Drizzle ORM",
-        "Firestore",
-        "Firebase Storage",
-        "Vercel"
-      ]
-    },
-    {
-      group: "Product tooling",
-      items: ["CASL", "Konva", "Contentful", "SendGrid"]
-    },
-    {
-      group: "Practices",
-      items: ["Full-stack architecture", "developer tooling", "testing", "automation"]
+      group: "Product engineering",
+      items: ["RBAC/CASL", "forms and PDF workflows", "reporting", "exports", "automation", "testing"]
     }
   ],
   repeatedTech: [
@@ -99,81 +82,63 @@ window.resumeData = {
   experience: [
     {
       organization: "Symph",
+      url: "https://symph.co/",
       role: "Software Engineer",
       dates: "Nov 2020 - Present",
       location: "Remote",
-      summary:
-        "Client and product engineering across NDA platforms, using full-stack and AI-assisted workflows to ship operational software.",
+      summary: "",
       bullets: [
-        "Shipped production work across React, TypeScript, Next.js, NestJS, Firebase, Strapi, MySQL/PostgreSQL, and Google Cloud."
-      ],
-      highlights: [
-        {
-          organization: "Healthcare Forms Companion",
-          location: "PDF previews / Auth / Forms",
-          role: "AI Product Engineer",
-          dates: "Jun 2026",
-          bullets: [
-            "Shipped patient/admin form workflows with authenticated PDF previews, editable fields, invite flows, and duplicate-save protections."
-          ]
-        },
-        {
-          organization: "Distributor Operations Platform",
-          location: "Next.js / Firebase / Exports",
-          role: "AI Product Engineer",
-          dates: "May 2026 - Jun 2026",
-          bullets: [
-            "Built AI-assisted operations workflows for account management, distributor reports, sales activity, purchase orders, consignment, exports, and admin controls."
-          ]
-        },
-        {
-          organization: "HRIS / Payroll Platform",
-          location: "Next.js / Firebase / CASL",
-          role: "AI Product Engineer",
-          dates: "Feb 2026 - Jun 2026",
-          bullets: [
-            "Built AI-assisted HRIS/payroll workflows across employee records, time tracking, leave approvals, payroll, RBAC, documentation, reports, and audit trails."
-          ]
-        },
-        {
-          organization: "Veterinary Clinic Platform",
-          location: "NestJS / Next.js / CASL",
-          role: "Software Engineer",
-          dates: "Jan 2026",
-          bullets: [
-            "Implemented CASL-based RBAC across NestJS and Next.js for platform admins, clinic owners, vets, staff, and pet owners.",
-            "Migrated role/clinic-membership checks with PostgreSQL/Drizzle schema changes, service-layer guards, and API client updates."
-          ]
-        },
-        {
-          organization: "Financial Services Operations Platform",
-          location: "React / TypeScript / MySQL",
-          role: "Software Engineer",
-          dates: "Jan 2021 - Nov 2025",
-          bullets: [
-            "Maintained KYC, remittance, ShopSafe, vault, reporting, receipt, and checkout workflows across React, Node/NestJS, MySQL, and stored procedures.",
-            "Delivered bank/vault reports, fund-request receipts, OTP controls, branch pickup, and payment workflow fixes."
-          ]
-        },
-        {
-          organization: "CMS / Marketplace Admin Platform",
-          location: "Strapi / TypeScript / GCP",
-          role: "Project Lead / Software Engineer",
-          dates: "Jan 2025 - May 2025",
-          bullets: [
-            "Led Strapi 5 CMS work for content, marketplace pages, opportunity settings, custom admin plugins, and verification workflows.",
-            "Integrated platform APIs through TypeScript services, React admin hooks, JWT review tokens, and status endpoints."
-          ]
-        },
-        {
-          organization: "Interior Design Commerce Platform",
-          location: "Firebase / React / Konva",
-          role: "Contributing Software Engineer",
-          dates: "Nov 2020 - Mar 2021",
-          bullets: [
-            "Improved React/Firebase design, client review, upload, questionnaire, access-control, shop, checkout, voucher, and admin export workflows."
-          ]
-        }
+        "Shipped client and product engineering across NDA platforms using full-stack and AI-assisted workflows across React, TypeScript, Next.js, NestJS, Firebase, Strapi, MySQL/PostgreSQL, and Google Cloud."
+      ]
+    },
+    {
+      organization: "Healthcare Forms Companion",
+      role: "AI Product Engineer",
+      dates: "Jun 2026",
+      location: "Healthcare forms and PDF workflow platform",
+      summary: "",
+      bullets: [
+        "Shipped patient/admin form workflows with authenticated PDF previews, editable fields, invite flows, and duplicate-save protections."
+      ]
+    },
+    {
+      organization: "Distributor Operations Platform",
+      role: "AI Product Engineer",
+      dates: "May 2026 - Jun 2026",
+      location: "Distributor operations and export workflows",
+      summary: "",
+      bullets: [
+        "Built AI-assisted operations workflows for account management, distributor reports, sales activity, purchase orders, consignment, exports, and admin controls."
+      ]
+    },
+    {
+      organization: "HRIS / Payroll Platform",
+      role: "AI Product Engineer",
+      dates: "Feb 2026 - Jun 2026",
+      location: "Employee operations, payroll, and RBAC workflows",
+      summary: "",
+      bullets: [
+        "Built AI-assisted HRIS/payroll workflows across employee records, time tracking, leave approvals, payroll, RBAC, documentation, reports, and audit trails."
+      ]
+    },
+    {
+      organization: "Financial Services Operations Platform",
+      role: "Software Engineer",
+      dates: "Jan 2021 - Nov 2025",
+      location: "Financial operations and reporting workflows",
+      summary: "",
+      bullets: [
+        "Maintained KYC, remittance, ShopSafe, vault, reporting, receipt, and checkout workflows across React, Node/NestJS, MySQL, and stored procedures."
+      ]
+    },
+    {
+      organization: "CMS / Marketplace Admin Platform",
+      role: "Project Lead / Software Engineer",
+      dates: "Jan 2025 - May 2025",
+      location: "CMS and marketplace operations platform",
+      summary: "",
+      bullets: [
+        "Led Strapi 5 CMS work for content, marketplace pages, opportunity settings, custom admin plugins, verification workflows, and TypeScript API integrations."
       ]
     }
   ],
