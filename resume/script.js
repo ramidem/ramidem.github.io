@@ -2,22 +2,6 @@
   var data = window.resumeData;
   var selectedLens = "general";
 
-  function getLens() {
-    return data.lenses.find(function (lens) {
-      return lens.id === selectedLens;
-    }) || data.lenses[0];
-  }
-
-  function projectMatches(project, lens) {
-    if (lens.id === "general") {
-      return true;
-    }
-
-    return project.tags.some(function (tag) {
-      return lens.tags.indexOf(tag) !== -1;
-    });
-  }
-
   function clear(node) {
     while (node.firstChild) {
       node.removeChild(node.firstChild);
@@ -35,108 +19,61 @@
     return node;
   }
 
-  function renderLenses() {
-    var list = document.querySelector("[data-lenses]");
-    clear(list);
+  function getLens() {
+    return data.lenses.find(function (lens) {
+      return lens.id === selectedLens;
+    }) || data.lenses[0];
+  }
 
-    data.lenses.forEach(function (lens) {
-      var button = el("button", "lens-button", lens.label);
+  function projectMatches(project, lens) {
+    if (lens.id === "general") {
+      return true;
+    }
+
+    return project.tags.some(function (tag) {
+      return lens.tags.indexOf(tag) !== -1;
+    });
+  }
+
+  function renderHeader() {
+    var profile = data.profile;
+    var contact = document.querySelector("[data-contact]");
+
+    document.querySelector("[data-name]").textContent = profile.name;
+    document.querySelector("[data-headline]").textContent = profile.headline;
+    document.querySelector("[data-summary]").textContent = profile.summary;
+
+    clear(contact);
+    contact.appendChild(el("span", "", profile.location));
+    contact.appendChild(el("span", "", profile.email));
+
+    var github = el("a", "", "GitHub");
+    github.href = profile.github;
+    github.rel = "noreferrer";
+    github.target = "_blank";
+    contact.appendChild(github);
+  }
+
+  function renderLenses() {
+    var lens = getLens();
+    var buttons = document.querySelector("[data-lenses]");
+
+    document.querySelector("[data-focus-summary]").textContent = lens.summary;
+    clear(buttons);
+
+    data.lenses.forEach(function (item) {
+      var button = el("button", "focus-button", item.label);
       button.type = "button";
-      button.setAttribute("data-lens", lens.id);
-      if (lens.id === selectedLens) {
+      button.setAttribute("data-lens", item.id);
+      button.setAttribute("aria-pressed", item.id === selectedLens ? "true" : "false");
+      if (item.id === selectedLens) {
         button.classList.add("is-active");
-        button.setAttribute("aria-pressed", "true");
-      } else {
-        button.setAttribute("aria-pressed", "false");
       }
       button.addEventListener("click", function () {
-        selectedLens = lens.id;
+        selectedLens = item.id;
         render();
       });
-      list.appendChild(button);
-    });
-  }
-
-  function renderSummary(projects) {
-    var lens = getLens();
-    document.querySelector("[data-lens-summary]").textContent = lens.summary;
-    document.querySelector("[data-project-count]").textContent = String(projects.length);
-  }
-
-  function renderSkills(projects) {
-    var skillList = document.querySelector("[data-skill-groups]");
-    var techList = document.querySelector("[data-tech-list]");
-    var techSeen = {};
-
-    clear(skillList);
-    clear(techList);
-
-    data.skills.forEach(function (group) {
-      var block = el("article", "skill-group");
-      block.appendChild(el("h3", "", group.group));
-
-      var items = el("div", "chip-list");
-      group.items.forEach(function (item) {
-        items.appendChild(el("span", "chip", item));
-      });
-
-      block.appendChild(items);
-      skillList.appendChild(block);
-    });
-
-    projects.forEach(function (project) {
-      project.tech.forEach(function (item) {
-        techSeen[item] = true;
-      });
-    });
-
-    Object.keys(techSeen).sort().forEach(function (item) {
-      techList.appendChild(el("span", "chip chip-strong", item));
-    });
-  }
-
-  function renderProjects(projects) {
-    var list = document.querySelector("[data-projects]");
-    clear(list);
-
-    projects.forEach(function (project) {
-      var card = el("article", "project-card");
-      var heading = el("div", "project-heading");
-      var titleBlock = el("div");
-      var meta = el("p", "project-meta", project.role + " | " + project.dates);
-
-      titleBlock.appendChild(el("h3", "", project.name));
-      titleBlock.appendChild(meta);
-      heading.appendChild(titleBlock);
-      heading.appendChild(el("span", "context-pill", project.context));
-
-      card.appendChild(heading);
-      card.appendChild(el("p", "project-summary", project.summary));
-
-      var tech = el("div", "chip-list");
-      project.tech.forEach(function (item) {
-        tech.appendChild(el("span", "chip", item));
-      });
-      card.appendChild(tech);
-
-      var bullets = el("ul", "bullet-list");
-      project.bullets.forEach(function (bullet) {
-        bullets.appendChild(el("li", "", bullet));
-      });
-      card.appendChild(bullets);
-      list.appendChild(card);
-    });
-  }
-
-  function renderRepeatedTech() {
-    var list = document.querySelector("[data-repeated-tech]");
-    clear(list);
-
-    data.repeatedTech.forEach(function (item) {
-      var row = el("li", "tech-row");
-      row.appendChild(el("span", "", item.name));
-      row.appendChild(el("strong", "", item.count + " projects"));
-      list.appendChild(row);
+      buttons.appendChild(button);
     });
   }
 
@@ -144,34 +81,102 @@
     var list = document.querySelector("[data-experience]");
     clear(list);
 
-    data.experience.forEach(function (job) {
-      var card = el("article", "experience-card");
-      card.appendChild(el("h3", "", job.organization));
-      card.appendChild(el("p", "project-meta", job.role + " | " + job.dates + " | " + job.location));
-      card.appendChild(el("p", "project-summary", job.summary));
-
-      var bullets = el("ul", "bullet-list");
-      job.bullets.forEach(function (bullet) {
-        bullets.appendChild(el("li", "", bullet));
-      });
-      card.appendChild(bullets);
-      list.appendChild(card);
+    data.experience.forEach(function (item) {
+      list.appendChild(renderEntry({
+        organization: item.organization,
+        location: item.location,
+        role: item.role,
+        dates: item.dates,
+        summary: item.summary,
+        bullets: item.bullets
+      }));
     });
   }
 
-  function render() {
+  function renderProjects() {
     var lens = getLens();
+    var list = document.querySelector("[data-projects]");
     var projects = data.projects.filter(function (project) {
       return projectMatches(project, lens);
     });
 
-    renderLenses();
-    renderSummary(projects);
-    renderSkills(projects);
-    renderProjects(projects);
-    renderRepeatedTech();
-    renderExperience();
+    clear(list);
+
+    projects.forEach(function (project) {
+      list.appendChild(renderEntry({
+        organization: project.name,
+        location: project.tech.slice(0, 4).join(" / "),
+        role: project.role,
+        dates: project.dates,
+        summary: project.summary,
+        bullets: project.bullets
+      }));
+    });
   }
 
-  document.addEventListener("DOMContentLoaded", render);
+  function renderEntry(item) {
+    var article = el("article", "entry");
+    var heading = el("div", "entry-line entry-heading");
+    var meta = el("div", "entry-line entry-meta");
+    var bullets = el("ul");
+
+    heading.appendChild(el("h3", "", item.organization));
+    if (item.location) {
+      heading.appendChild(el("p", "", item.location));
+    }
+
+    meta.appendChild(el("p", "", item.role));
+    meta.appendChild(el("time", "", item.dates));
+
+    article.appendChild(heading);
+    article.appendChild(meta);
+
+    if (item.summary) {
+      article.appendChild(el("p", "entry-summary", item.summary));
+    }
+
+    item.bullets.forEach(function (bullet) {
+      bullets.appendChild(el("li", "", bullet));
+    });
+    article.appendChild(bullets);
+
+    return article;
+  }
+
+  function renderSkills() {
+    var list = document.querySelector("[data-skills]");
+    clear(list);
+
+    data.skills.forEach(function (skill) {
+      var row = el("div");
+      row.appendChild(el("dt", "", skill.group));
+      row.appendChild(el("dd", "", skill.items.join(", ")));
+      list.appendChild(row);
+    });
+
+    var interests = el("div");
+    interests.appendChild(el("dt", "", "Interests"));
+    interests.appendChild(el("dd", "", "Product systems, developer experience, automation"));
+    list.appendChild(interests);
+  }
+
+  function bindActions() {
+    var printButton = document.querySelector("[data-print]");
+    printButton.addEventListener("click", function () {
+      window.print();
+    });
+  }
+
+  function render() {
+    renderHeader();
+    renderLenses();
+    renderExperience();
+    renderProjects();
+    renderSkills();
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    bindActions();
+    render();
+  });
 })();

@@ -4,122 +4,76 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Med Aduh | Resume</title>
-  <meta name="description" content="Interactive static resume for Med Aduh, focused on full-stack product engineering, backend systems, and operational software.">
+  <meta name="description" content="Public resume for Med Aduh, focused on full-stack product engineering, backend systems, and operational software.">
   <link rel="canonical" href="https://ramidem.github.io/resume/">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="site-shell">
-    <header class="topbar">
-      <a class="brand-link" href="../">Med Aduh</a>
-      <nav aria-label="Resume sections">
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="mailto:im.ramidem@gmail.com">Contact</a>
-      </nav>
-    </header>
-
-    <main>
-      <section class="hero" aria-labelledby="page-title">
-        <div>
-          <p class="eyebrow">Reviewed profile</p>
-          <h1 id="page-title">Med Aduh</h1>
-          <p class="hero-summary">
-            Software engineer focused on backend-leaning full-stack systems, product delivery,
-            operational workflows, and AI-assisted engineering with source review.
-          </p>
-          <p class="contact-line">
-            Davao City, Philippines / Remote ·
-            <a href="mailto:im.ramidem@gmail.com">im.ramidem@gmail.com</a> ·
-            <a href="https://github.com/ramidem">github.com/ramidem</a>
-          </p>
-        </div>
-
-        <aside class="hero-panel" aria-label="Profile highlights">
-          <dl>
-            <div>
-              <dt>Primary fit</dt>
-              <dd>Full-stack / product engineering</dd>
+  <main class="page-shell">
+    <div class="resume-toolbar no-print" aria-label="Resume actions">
+      <details class="toolbar-contact">
+        <summary>Message</summary>
+        <div class="toolbar-contact-panel">
+          <h2>Message Med</h2>
+          <p><a href="mailto:im.ramidem@gmail.com">im.ramidem@gmail.com</a></p>
+          <form class="message-form" action="mailto:im.ramidem@gmail.com" method="post" enctype="text/plain">
+            <div class="field-grid">
+              <label>
+                Name
+                <input name="name" autocomplete="name">
+              </label>
+              <label>
+                Email
+                <input name="email" type="email" autocomplete="email">
+              </label>
             </div>
-            <div>
-              <dt>Current role</dt>
-              <dd>Software Engineer at Symph</dd>
-            </div>
-            <div>
-              <dt>Strong signals</dt>
-              <dd>React, TypeScript, Node.js, Firebase, GCP, SQL</dd>
-            </div>
-            <div>
-              <dt>Updated</dt>
-              <dd>June 30, 2026</dd>
-            </div>
-          </dl>
-        </aside>
-      </section>
-
-      <section class="lens-wrap" aria-labelledby="lens-title">
-        <h2 id="lens-title">Hiring Lens</h2>
-        <div class="lens-buttons" data-lenses></div>
-        <div class="lens-summary">
-          <p data-lens-summary></p>
-          <span class="count-pill"><span data-project-count>12</span> matching projects</span>
+            <label>
+              Message
+              <textarea name="message"></textarea>
+            </label>
+            <button class="icon-button primary" type="submit">Open email draft</button>
+          </form>
         </div>
+      </details>
+      <button class="icon-button" type="button" data-print>Print / Save PDF</button>
+      <a class="icon-button" href="data.js">Data</a>
+    </div>
+
+    <section class="resume-paper" aria-label="Resume">
+      <header class="resume-header">
+        <h1 data-name>Med Aduh</h1>
+        <p class="headline-line" data-headline></p>
+        <p class="contact-line" data-contact></p>
+      </header>
+
+      <section class="resume-section focus-panel no-print" aria-labelledby="focus">
+        <h2 id="focus">Focus</h2>
+        <p class="entry-summary" data-focus-summary></p>
+        <div class="focus-buttons" data-lenses></div>
       </section>
 
-      <section class="section grid-two" id="experience" aria-labelledby="experience-title">
-        <div>
-          <h2 id="experience-title">Experience</h2>
-          <div class="stack" data-experience></div>
-        </div>
-
-        <aside class="stat-card" aria-labelledby="repeated-tech-title">
-          <h2 id="repeated-tech-title">Repeated Signals</h2>
-          <p class="section-note">Counts come from reviewed project records.</p>
-          <ul class="tech-list" data-repeated-tech></ul>
-        </aside>
+      <section class="resume-section" aria-labelledby="summary">
+        <h2 id="summary">Summary</h2>
+        <p class="entry-summary" data-summary></p>
       </section>
 
-      <section class="section" id="projects" aria-labelledby="projects-title">
-        <h2 id="projects-title">Project Evidence</h2>
-        <p class="section-note">
-          Public-safe summaries from reviewed project records. Private repository URLs, credentials,
-          customer data, and local operational notes are intentionally excluded.
-        </p>
-        <div class="stack" data-projects></div>
+      <section class="resume-section" aria-labelledby="experience">
+        <h2 id="experience">Experience</h2>
+        <div class="entry-list" data-experience></div>
       </section>
 
-      <section class="section grid-two" id="skills" aria-labelledby="skills-title">
-        <div>
-          <h2 id="skills-title">Skills</h2>
-          <div class="skills-grid" data-skill-groups></div>
-        </div>
-
-        <aside class="stat-card">
-          <h2>Current Lens Stack</h2>
-          <p class="section-note">Technologies appearing in the visible project set.</p>
-          <div class="chip-list" data-tech-list></div>
-        </aside>
+      <section class="resume-section" aria-labelledby="work">
+        <h2 id="work">Work</h2>
+        <div class="entry-list" data-projects></div>
       </section>
 
-      <noscript>
-        <section class="section fallback" aria-labelledby="fallback-title">
-          <h2 id="fallback-title">General Resume</h2>
-          <p>
-            Full-stack engineer with production work across React, TypeScript, Next.js, NestJS,
-            Firebase, Strapi, MySQL/PostgreSQL, and Google Cloud. Key work includes financial
-            services operations systems, HRIS/payroll workflows, CMS/admin platforms,
-            role-based authorization, reports, exports, and commerce flows.
-          </p>
-        </section>
-      </noscript>
-    </main>
-
-    <footer class="footer">
-      <p>Public-safe resume content curated from reviewed project records.</p>
-    </footer>
-  </div>
+      <section class="resume-section skills" aria-labelledby="skills">
+        <h2 id="skills">Skills &amp; Interests</h2>
+        <dl data-skills></dl>
+      </section>
+    </section>
+  </main>
 
   <script src="data.js"></script>
   <script src="script.js"></script>
