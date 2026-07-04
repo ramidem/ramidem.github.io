@@ -109,6 +109,33 @@ window.resumeData = {
       ],
       highlights: [
         {
+          organization: "HRIS / Payroll Platform",
+          location: "Next.js / Firebase / CASL",
+          role: "AI Product Engineer",
+          dates: "Feb 2026 - Jun 2026",
+          bullets: [
+            "Built AI-assisted HRIS/payroll workflows across employee records, time tracking, leave approvals, payroll, RBAC, documentation, reports, and audit trails."
+          ]
+        },
+        {
+          organization: "Distributor Operations Platform",
+          location: "Next.js / Firebase / Exports",
+          role: "AI Product Engineer",
+          dates: "May 2026 - Jun 2026",
+          bullets: [
+            "Built AI-assisted operations workflows for account management, distributor reports, sales activity, purchase orders, consignment, exports, and admin controls."
+          ]
+        },
+        {
+          organization: "Healthcare Forms Companion",
+          location: "PDF previews / Auth / Forms",
+          role: "AI Product Engineer",
+          dates: "Jun 2026",
+          bullets: [
+            "Shipped patient/admin form workflows with authenticated PDF previews, editable fields, invite flows, and duplicate-save protections."
+          ]
+        },
+        {
           organization: "Financial Services Operations Platform",
           location: "React / TypeScript / MySQL",
           role: "Software Engineer",
@@ -153,7 +180,7 @@ window.resumeData = {
   projects: [
     {
       name: "HRIS / Payroll Platform",
-      role: "Project Lead / Software Engineer",
+      role: "AI Product Engineer",
       dates: "Feb 2026 - Jun 2026",
       context: "Symph client work; AI-assisted delivery",
       tags: ["fullstack", "backend", "frontend", "product", "operations", "platform", "ai", "auth"],
@@ -164,6 +191,19 @@ window.resumeData = {
         "Built org-scoped Firestore architecture, Firebase Auth/Admin integration, Storage rules, API routes, CASL permission gates, and emulator-backed tests.",
         "Implemented operational workflows for employee lifecycle, time tracking, leave approvals, payslips, schedules, onboarding, documentation, and notifications.",
         "Added release-quality tooling for generated documentation search, release notes, validation scripts, Playwright, Jest, and Firebase rules tests."
+      ]
+    },
+    {
+      name: "Healthcare Forms Companion",
+      role: "AI Product Engineer",
+      dates: "Jun 2026",
+      context: "Symph NDA work; AI-assisted delivery",
+      tags: ["fullstack", "frontend", "product", "operations", "ai", "auth"],
+      tech: ["Next.js", "TypeScript", "Firebase Auth", "PDF previews"],
+      summary:
+        "Built companion healthcare form workflows for patient/admin form handling, authenticated PDF previews, and editable form entries.",
+      bullets: [
+        "Shipped patient/admin form workflows with invite flows, editable entries, authenticated PDF previews, field options, patient creation, and duplicate-save protections."
       ]
     },
     {
@@ -272,7 +312,7 @@ window.resumeData = {
     },
     {
       name: "Distributor Operations Platform",
-      role: "Project Lead / Software Engineer",
+      role: "AI Product Engineer",
       dates: "May 2026 - Jun 2026",
       context: "Symph client work; AI-assisted delivery",
       tags: ["fullstack", "backend", "frontend", "operations", "product", "ai"],
