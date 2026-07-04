@@ -7,9 +7,10 @@
   --line: #11161a;
   --soft-line: #d9dde1;
   --field: #f6f6f6;
+  --page-bg: #eeeeee;
   --accent: #11161a;
   --error: #9f1239;
-  --shadow: 0 3px 14px rgb(17 22 26 / 6%);
+  --shadow: none;
   --font-readable: Arial, Helvetica, system-ui, sans-serif;
 }
 
@@ -18,13 +19,14 @@
 }
 
 html {
-  background: #f2f2f2;
+  background: var(--page-bg);
   color: var(--ink);
   font-family: var(--font-readable);
   font-size: 16px;
 }
 
 body {
+  background: var(--page-bg);
   margin: 0;
 }
 
