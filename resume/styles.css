@@ -9,6 +9,7 @@
   --field: #f6f6f6;
   --page-bg: #eeeeee;
   --accent: #11161a;
+  --link: #551a8b;
   --error: #9f1239;
   --shadow: none;
   --font-readable: Arial, Helvetica, system-ui, sans-serif;
@@ -31,9 +32,12 @@ body {
 }
 
 a {
-  color: inherit;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.18em;
+  color: var(--link);
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--link);
 }
 
 button,
