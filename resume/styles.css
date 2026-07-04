@@ -92,21 +92,12 @@ p {
 }
 
 h1 {
-  align-items: center;
   color: #000000;
-  display: inline-flex;
   font-size: 1.24rem;
   font-weight: 800;
-  gap: 0.42rem;
-  justify-content: center;
   letter-spacing: 0;
   line-height: 1.15;
   margin-bottom: 10px;
-}
-
-.resume-emoji {
-  font-size: 1.05em;
-  line-height: 1;
 }
 
 .home-link,
