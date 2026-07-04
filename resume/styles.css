@@ -12,7 +12,24 @@
   --link: #551a8b;
   --error: #9f1239;
   --shadow: none;
+  --font-display: "Vollkorn", Georgia, serif;
   --font-readable: Arial, Helvetica, system-ui, sans-serif;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Vollkorn";
+  font-style: normal;
+  font-weight: 400 900;
+  src: url("../assets/fonts/vollkorn/Vollkorn-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Vollkorn";
+  font-style: italic;
+  font-weight: 400 900;
+  src: url("../assets/fonts/vollkorn/Vollkorn-Italic-VariableFont_wght.ttf") format("truetype");
 }
 
 * {
@@ -97,6 +114,7 @@ p {
 
 h1 {
   color: #000000;
+  font-family: var(--font-display);
   font-size: 1.24rem;
   font-weight: 800;
   letter-spacing: 0;
@@ -196,6 +214,7 @@ h1 {
   align-items: center;
   color: var(--ink);
   display: flex;
+  font-family: var(--font-display);
   font-size: 0.84rem;
   font-weight: 800;
   gap: 12px;
@@ -252,6 +271,7 @@ h1 {
 
 .entry h3 {
   color: #000000;
+  font-family: var(--font-display);
   font-size: 1rem;
   font-weight: 800;
   line-height: 1.24;

@@ -1,6 +1,23 @@
+@font-face {
+  font-display: swap;
+  font-family: "Vollkorn";
+  font-style: normal;
+  font-weight: 400 900;
+  src: url("../fonts/vollkorn/Vollkorn-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Vollkorn";
+  font-style: italic;
+  font-weight: 400 900;
+  src: url("../fonts/vollkorn/Vollkorn-Italic-VariableFont_wght.ttf") format("truetype");
+}
+
 body {
   background-color: whitesmoke;
   color: #666;
+  font-family: "Vollkorn", Georgia, serif;
   font-size: 58px;
 }
 
