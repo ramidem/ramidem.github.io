@@ -99,9 +99,8 @@ textarea {
 
 .resume-header {
   align-items: center;
-  border-bottom: 2px solid var(--ink);
   display: block;
-  padding-bottom: 13px;
+  padding-bottom: 6px;
   text-align: center;
 }
 
@@ -131,7 +130,6 @@ h1 {
   cursor: pointer;
   display: inline-flex;
   font-size: 0.88rem;
-  font-family: var(--font-readable);
   font-weight: 800;
   gap: 8px;
   min-height: 40px;
@@ -145,6 +143,9 @@ h1 {
 
 .home-link {
   background: transparent;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 500;
   min-height: 40px;
 }
 
@@ -197,11 +198,28 @@ h1 {
   display: inline;
 }
 
-.contact-line span:not(:last-child)::after,
-.contact-line a:not(:last-child)::after {
+.contact-line a {
+  color: var(--link);
+  text-decoration: underline;
+}
+
+.contact-line a:hover {
+  color: var(--link);
+  text-decoration: underline;
+}
+
+.contact-line span:not(:last-child)::after {
   content: " • ";
   display: inline;
   padding: 0 5px;
+}
+
+.contact-line a:not(:last-child)::after {
+  color: var(--muted);
+  content: "|";
+  display: inline;
+  padding: 0 7px;
+  text-decoration: none;
 }
 
 .resume-section {
@@ -329,30 +347,33 @@ h1 {
   padding-left: 5px;
 }
 
-.skills dl {
-  display: grid;
-  gap: 2px;
-  margin: 0;
-}
-
-.skills dl div {
-  display: flex;
-  gap: 5px;
-}
-
-.skills .skill-row {
+.skills-table {
+  border-collapse: collapse;
   color: #2b3034;
-  display: block;
+  margin: 0;
+  width: 100%;
 }
 
-.skills dt {
+.skills-table th,
+.skills-table td {
+  border: 0;
+  font-size: inherit;
+  line-height: 1.28;
+  padding: 0 0 2px;
+  vertical-align: top;
+}
+
+.skills-table th {
   color: #000000;
   font-weight: 800;
+  padding-right: 8px;
+  text-align: left;
+  white-space: nowrap;
 }
 
-.skills dd {
+.skills-table td {
   color: #2b3034;
-  margin: 0;
+  width: 100%;
 }
 
 @media (max-width: 1080px) {
@@ -432,8 +453,21 @@ h1 {
     padding-left: 12px;
   }
 
-  .skills dl div {
+  .skills-table,
+  .skills-table tbody,
+  .skills-table tr,
+  .skills-table th,
+  .skills-table td {
     display: block;
+    width: 100%;
+  }
+
+  .skills-table th {
+    padding-right: 0;
+  }
+
+  .skills-table td {
+    padding-bottom: 4px;
   }
 }
 
@@ -481,8 +515,7 @@ h1 {
   }
 
   .resume-header {
-    border-bottom-width: 1.5pt;
-    padding-bottom: 7pt;
+    padding-bottom: 2pt;
   }
 
   .headline-line {
@@ -571,7 +604,9 @@ h1 {
     margin-top: 4pt;
   }
 
-  .skills dl {
-    gap: 0;
+  .skills-table th,
+  .skills-table td {
+    line-height: 1.2;
+    padding-bottom: 1pt;
   }
 }

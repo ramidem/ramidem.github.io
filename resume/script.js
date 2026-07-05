@@ -27,11 +27,14 @@
 
     clear(contact);
     contact.appendChild(el("span", "", profile.location));
-    contact.appendChild(el("span", "", profile.email));
+
+    var email = el("a", "", profile.email);
+    email.href = "mailto:" + profile.email;
+    contact.appendChild(email);
 
     var github = el("a", "", "GitHub");
     github.href = profile.github;
-    github.rel = "noreferrer";
+    github.rel = "noopener noreferrer";
     github.target = "_blank";
     contact.appendChild(github);
   }
@@ -68,7 +71,7 @@
 
     if (item.url) {
       title.href = item.url;
-      title.rel = "noreferrer";
+      title.rel = "noopener noreferrer";
       title.target = "_blank";
       var titleHeading = el("h3");
       titleHeading.appendChild(title);
@@ -120,9 +123,12 @@
     clear(list);
 
     data.skills.forEach(function (skill) {
-      var row = el("div");
-      row.className = "skill-row";
-      row.textContent = skill.group + ": " + skill.items.join(", ");
+      var row = el("tr");
+      var term = el("th", "", skill.group + ":");
+      var details = el("td", "", skill.items.join(", "));
+
+      row.appendChild(term);
+      row.appendChild(details);
       list.appendChild(row);
     });
   }

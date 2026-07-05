@@ -2,7 +2,7 @@ window.resumeData = {
   profile: {
     name: "Med Aduh",
     headline: "Software Engineer | Backend-leaning full-stack systems and product delivery",
-    location: "Davao City, Philippines / Remote",
+    location: "Davao City, Philippines",
     email: "im.ramidem@gmail.com",
     github: "https://github.com/ramidem",
     summary:
