@@ -40,6 +40,11 @@ main {
   width: 100%;
 }
 
+a,
+a:visited {
+  color: #c7372f;
+}
+
 h1 {
   color: #444;
   margin-bottom: 0;
