@@ -6,15 +6,12 @@ Static GitHub Pages site for `ramidem.github.io`.
 
 - `/` - homepage
 - `/projects` - projects placeholder page
-- `/resume` - interactive static resume
-- `/resume/med-aduh-resume.pdf` - downloadable resume PDF generated from the resume page
-- `/notes` - notes blog in a notes-app layout; notes are Jekyll posts in `_posts/` (see [Notes](#notes))
-- `/notes/<folder>/` - one folder's notes; `/notes/<folder>/<slug>/` - a note
+- `/resume` - static resume; `/resume/med-aduh-resume.pdf` is generated from it
+- `/notes` - notes blog; notes are Jekyll posts in `_posts/` (see [Notes](#notes))
 - `/notes/feed.xml` - Atom feed of all notes
-- `/assets/fonts/vollkorn` - self-hosted Vollkorn font files used by the site
 
-Analytics: [GoatCounter](https://ramidem.goatcounter.com), set by `goatcounter` in `_config.yml`
-(production builds only).
+Analytics: [GoatCounter](https://ramidem.goatcounter.com) (`goatcounter` in `_config.yml`), in
+production builds only.
 
 ## Local Development
 
@@ -24,39 +21,21 @@ One-time setup (Ruby version is pinned in `.ruby-version`):
 brew install rbenv ruby-build   # skip if already installed
 echo 'eval "$(rbenv init - zsh)"' >> ~/.zshrc   # once; then open a new terminal
 rbenv install -s                 # installs the version in .ruby-version
-ruby -v                          # should match .ruby-version, not Homebrew's Ruby
 gem install bundler -v 2.3.26
 bundle install
 ```
 
-Run a dev server with live reload:
+Run a dev server at `http://localhost:4317/` (restart it after changing `_config.yml`):
 
 ```sh
 bundle exec jekyll serve --livereload --port 4317
 ```
 
-Or build once and serve the static output:
-
-```sh
-bundle exec jekyll build
-python3 -m http.server 4317 --directory _site
-```
-
-Open:
-
-```text
-http://localhost:4317/
-http://localhost:4317/resume/
-http://localhost:4317/notes/
-```
-
-Restart the dev server after changing `_config.yml`; it doesn't reload config.
-
 ## Notes
 
 ### Add a note
 
-Create `_posts/YYYY-MM-DD-slug.md`. The `slug` part of the filename becomes the note's address:
+Create `_posts/YYYY-MM-DD-slug.md`:
 
 ```markdown
 ---
@@ -68,18 +47,15 @@ category: jekyll
 The note, in markdown.
 ```
 
-- `title`, `date` - required. Include the `+0800` offset; posts dated in the future are skipped.
-- `description` - the preview line in the list and in link previews. Optional; defaults to the
-  first paragraph.
-- `category` - the note's folder (one level; no folders inside folders). Leave it out for a note
-  that only appears under All Notes.
-- `pinned: true` - lists the note under Pinned, and list pages open on it.
+- `title`, `date` - required. Keep the `+0800` offset; future-dated posts are skipped.
+- `description` - the preview line in lists and link previews; defaults to the first paragraph.
+- `category` - the note's folder (one level). Leave it out to list the note only under All Notes.
+- `pinned: true` - lists the note under Pinned; list pages open on it.
 
-The note lives at `/notes/<category>/<slug>/`, or `/notes/<slug>/` without a category. Keep slugs
-unique: two notes with the same address overwrite each other.
+The note lives at `/notes/<category>/<slug>/` (or `/notes/<slug>/`). Slugs must be unique, or one
+note overwrites the other.
 
-Markdown has no syntax for media, so use the includes in `_includes/notes/` (each file documents
-its parameters):
+For media, use the includes in `_includes/notes/` (each documents its parameters):
 
 ```liquid
 {% include notes/figure.html src="/notes/media/photo.jpg" alt="..." caption="..." %}
@@ -89,11 +65,12 @@ its parameters):
 {% include notes/link-card.html url="https://..." title="..." description="..." %}
 ```
 
-Put self-hosted files in `notes/media/`; host anything long on YouTube or Vimeo.
+Self-hosted files go in `notes/media/`.
 
 ### Add a folder
 
-Folders come from `category`, but each one also needs a page at `notes/<folder>/index.html`:
+Each folder (lowercase, hyphenated) needs a page at `notes/<folder>/index.html`, or its link is a
+404 (the sidebar marks it):
 
 ```yaml
 ---
@@ -102,59 +79,62 @@ folder: jekyll
 ---
 ```
 
-Use lowercase, hyphenated folder names. Without the page, the folder still shows in the sidebar,
-marked with a dashed underline, but its link is a 404.
+### How it works
+
+- `_includes/notes/app.html` draws the panes; `_layouts/note.html`, `_layouts/folder.html`, and
+  `notes/index.html` use it. Styles in `notes/styles.css`; `notes/notes.js` adds the sidebar
+  toggle, share, search, and list memory (pages work without it).
+- Lists show Pinned, then notes by month. A note's page lists All Notes, or its folder if you came
+  from there.
+- The feed's title and subtitle are `title` and `description` in `_config.yml`.
+- Click events are marked with `data-goatcounter-click`. The resume isn't built by Jekyll, so its
+  head has its own copy of the GoatCounter snippet.
 
 ### Search
 
-Search on `/notes` uses [Pagefind](https://pagefind.app/), which indexes the built site. The deploy
-workflow builds the index after Jekyll. Locally, with the dev server running, build it into `_site`:
+Search uses [Pagefind](https://pagefind.app/); the deploy workflow builds the index. To build it
+locally (re-run after edits), with the dev server running:
 
 ```sh
 npx pagefind@1.5.2 --site _site
 ```
 
-Re-run it to pick up note changes. Without an index, the search box falls back to matching note
-titles and previews.
+Without an index, search matches only titles and previews. Search covers the current list (All
+Notes or a folder), and the query lives in the address as `?q=`.
 
-## Resume Checks
+## Resume
 
-Check resume JavaScript syntax:
+Check the JavaScript:
 
 ```sh
 node --check resume/data.js
 node --check resume/script.js
 ```
 
-Regenerate the downloadable resume PDF from the local page:
+Regenerate the PDF from the dev server, then confirm it's one page:
 
 ```sh
 mkdir -p tmp/pdfs
 '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' \
-  --headless \
-  --disable-gpu \
-  --no-pdf-header-footer \
+  --headless --disable-gpu --no-pdf-header-footer \
   --print-to-pdf="$PWD/tmp/pdfs/resume.pdf" \
   "http://localhost:4317/resume/"
 cp tmp/pdfs/resume.pdf resume/med-aduh-resume.pdf
 rm -rf tmp
-```
-
-Confirm the PDF remains one page:
-
-```sh
 pdfinfo resume/med-aduh-resume.pdf | rg 'Pages|File size'
 ```
 
 ## Deploy
 
-Push to `master`. The `Deploy site` workflow (`.github/workflows/pages.yml`) builds the site
-with the Gemfile's Jekyll on the Ruby in `.ruby-version`, the same as local development, and
-deploys it to GitHub Pages.
+Push to `master`. The `Deploy site` workflow (`.github/workflows/pages.yml`) builds with the
+Gemfile's Jekyll and deploys to GitHub Pages (Settings → Pages → Source: GitHub Actions).
 
-This needs the repository's Pages source set to GitHub Actions: Settings → Pages →
-Build and deployment → Source: **GitHub Actions**.
-
-`Gemfile.lock` lists both `arm64-darwin` (local) and `x86_64-linux` (the build runner). Keep both
-when updating gems; if a platform goes missing, add it back with
+`Gemfile.lock` must list both `arm64-darwin` and `x86_64-linux`; if Linux goes missing, run
 `bundle lock --add-platform x86_64-linux`.
+
+## Gotchas
+
+- Folders inside `_posts/` don't set categories; notes use front matter only.
+- Jekyll has no nested categories, and `site.posts | map: "categories" | map: "first"` silently
+  returns nothing; collect folder names with a loop.
+- kramdown wraps a leading `<a>` in `<p>`, so block includes must start with a block tag.
