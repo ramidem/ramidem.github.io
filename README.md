@@ -16,7 +16,9 @@ One-time setup (Ruby version is pinned in `.ruby-version`):
 
 ```sh
 brew install rbenv ruby-build   # skip if already installed
+echo 'eval "$(rbenv init - zsh)"' >> ~/.zshrc   # once; then open a new terminal
 rbenv install -s                 # installs the version in .ruby-version
+ruby -v                          # should match .ruby-version, not Homebrew's Ruby
 gem install bundler -v 2.3.26
 bundle install
 ```
