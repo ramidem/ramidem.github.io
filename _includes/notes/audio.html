@@ -1,0 +1,13 @@
+{%- comment -%}
+  Audio clip with an optional caption.
+  {% include notes/audio.html src="/notes/media/clip.mp3" title="..." caption="..." %}
+{%- endcomment -%}
+<figure class="note-figure note-audio">
+<audio controls preload="metadata" src="{{ include.src | relative_url }}"
+  {%- if include.title %} aria-label="{{ include.title | escape }}"{% endif %}>
+<a href="{{ include.src | relative_url }}">Download the audio</a>
+</audio>
+{%- if include.caption %}
+<figcaption>{{ include.caption }}</figcaption>
+{%- endif %}
+</figure>

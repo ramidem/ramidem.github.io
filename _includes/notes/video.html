@@ -1,0 +1,19 @@
+{%- comment -%}
+  Self-hosted video. Pass loop=true for a short, silent, GIF-style clip.
+  {% include notes/video.html src="/notes/media/clip.mp4" webm="/notes/media/clip.webm" poster="/notes/media/clip.jpg" caption="..." %}
+{%- endcomment -%}
+<figure class="note-figure note-video">
+<video
+  {%- if include.poster %} poster="{{ include.poster | relative_url }}"{% endif %}
+  {%- if include.loop %} autoplay muted loop playsinline data-loop{% else %} controls playsinline preload="metadata"{% endif %}
+  {%- if include.title %} aria-label="{{ include.title | escape }}"{% endif %}>
+{%- if include.webm %}
+<source src="{{ include.webm | relative_url }}" type="video/webm">
+{%- endif %}
+<source src="{{ include.src | relative_url }}" type="video/mp4">
+<a href="{{ include.src | relative_url }}">Download the video</a>
+</video>
+{%- if include.caption %}
+<figcaption>{{ include.caption }}</figcaption>
+{%- endif %}
+</figure>

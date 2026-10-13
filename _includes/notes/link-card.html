@@ -1,0 +1,24 @@
+{%- comment -%}
+  Link preview card, for articles, PDFs, and anything that does not embed well.
+  {% include notes/link-card.html url="https://..." title="..." description="..." image="..." %}
+{%- endcomment -%}
+{%- assign url = include.url | relative_url -%}
+{%- if url contains "://" -%}
+  {%- assign host = url | split: "/" | slice: 2 | first | remove_first: "www." -%}
+  {%- assign external = true -%}
+{%- else -%}
+  {%- assign host = site.url | split: "/" | slice: 2 | first -%}
+  {%- assign external = false -%}
+{%- endif -%}
+<a class="note-card" href="{{ url }}"{% if external %} target="_blank" rel="noopener noreferrer"{% endif %}>
+<span class="note-card-text">
+<strong>{{ include.title }}</strong>
+{%- if include.description %}
+<span class="note-card-description">{{ include.description }}</span>
+{%- endif %}
+<span class="note-card-host">{{ host }}</span>
+</span>
+{%- if include.image %}
+<img class="note-card-image" src="{{ include.image | relative_url }}" alt="" loading="lazy">
+{%- endif %}
+</a>

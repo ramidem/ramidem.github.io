@@ -1,10 +1,297 @@
 ---
 layout: base
 permalink: /notes/
+styles: /notes/styles.css
 ---
-<div class="wrapper">
-  <main>
-    <h1>notes</h1>
-    <p>Nothing to see here. <a href="/">Go home.</a></p>
-  </main>
+<div class="wrapper notes-wrapper">
+  <div class="notes-app">
+    <nav class="notes-sidebar" aria-label="Folders">
+      <div class="notes-toolbar">
+        <h1 class="notes-heading">Stuff<span class="amp">&amp;</span>NonSense</h1>
+      </div>
+
+      <ul class="folder-list">
+        <li><a href="#" aria-current="true"><svg class="notes-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg>All Notes<span class="folder-count">4</span></a></li>
+        <li><a href="#"><svg class="notes-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg>dev<span class="folder-count">2</span></a></li>
+        <li><a href="#"><svg class="notes-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg>life<span class="folder-count">1</span></a></li>
+        <li><a href="#"><svg class="notes-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg>reading<span class="folder-count">1</span></a></li>
+      </ul>
+
+      <a class="sidebar-home" href="/">&larr; home</a>
+    </nav>
+
+    <section class="notes-list" aria-label="Notes">
+      <div class="notes-toolbar">
+        <div>
+          <div class="list-title">All Notes</div>
+          <div class="list-count">4 notes</div>
+        </div>
+        <button class="notes-share" type="button" aria-label="Share this note"><svg class="notes-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7" /><path d="M16 6l-4-4-4 4" /><path d="M12 2v13" /></svg></button>
+      </div>
+
+      <div class="notes-search">
+        <input type="search" placeholder="Search" aria-label="Search notes">
+      </div>
+
+      <div class="notes-scroll">
+        <p class="list-group">Pinned</p>
+        <ul>
+          <li><a class="note-row" href="#hello-notes" aria-current="true"><strong>Hello, notes</strong><span class="note-row-meta"><time datetime="2026-10-13">10/13/26</time>Every piece of markdown a note can use</span></a></li>
+        </ul>
+
+        <p class="list-group">Previous 30 Days</p>
+        <ul>
+          <li><a class="note-row" href="#ruby-4-upgrade"><strong>Upgrading this site to Ruby 4</strong><span class="note-row-meta"><time datetime="2026-10-02">10/2/26</time>rbenv, arm64, and a stubborn Gemfile.lock</span></a></li>
+          <li><a class="note-row" href="#reading-list"><strong>Reading list</strong><span class="note-row-meta"><time datetime="2026-09-21">9/21/26</time>Books queued for the rest of the year</span></a></li>
+        </ul>
+
+        <p class="list-group">August</p>
+        <ul>
+          <li><a class="note-row" href="#weekend-checklist"><strong>Weekend checklist</strong><span class="note-row-meta"><time datetime="2026-08-08">8/8/26</time>Small things, done slowly</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="notes-body" aria-label="Note">
+      <div class="notes-toolbar">
+        <a class="notes-back" href="#">&lsaquo; Notes</a>
+      </div>
+
+      <div class="notes-body-scroll">
+        <article class="note" id="hello-notes">
+          <time class="note-date" datetime="2026-10-13T14:27">October 13, 2026 at 2:27 PM</time>
+          <h1>Hello, notes</h1>
+          <p>Sample note. Every piece of markdown a note can use, so the styles get tested in one place.</p>
+
+          <h2>Headings</h2>
+          <p>The note title is the <code>#</code> heading. The rest go down to six levels.</p>
+          <h3>Third level</h3>
+          <h4>Fourth level</h4>
+          <h5>Fifth level</h5>
+          <h6>Sixth level</h6>
+
+          <h2>Text</h2>
+          <p>A paragraph with <em>emphasis</em>, <strong>strong text</strong>, <strong><em>both at once</em></strong>, <del>strikethrough</del>, and <code>inline code</code>.<br>
+          This line follows a hard line break.</p>
+          <p>Links: <a href="/">an inline link</a>, <a href="https://github.com/ramidem" title="ramidem on GitHub">a link with a title</a>, and an autolink <a href="https://ramidem.github.io">https://ramidem.github.io</a>.</p>
+          <p>An abbreviation: <abbr title="HyperText Markup Language">HTML</abbr>. A footnote reference.<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></p>
+
+          <h2>Quotes</h2>
+          <blockquote>
+            <p>A blockquote. Good for things other people said.</p>
+            <blockquote>
+              <p>A quote inside a quote.</p>
+            </blockquote>
+          </blockquote>
+
+          <h2>Lists</h2>
+          <ul>
+            <li>Unordered item</li>
+            <li>Another item
+              <ul>
+                <li>Nested item</li>
+                <li>Another nested item</li>
+              </ul>
+            </li>
+          </ul>
+          <ol>
+            <li>Ordered item</li>
+            <li>Second item
+              <ol>
+                <li>Nested ordered item</li>
+              </ol>
+            </li>
+            <li>Third item</li>
+          </ol>
+          <ul class="task-list">
+            <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked">A finished task</li>
+            <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled">An open task</li>
+          </ul>
+          <dl>
+            <dt>Definition term</dt>
+            <dd>The definition, from a kramdown definition list.</dd>
+          </dl>
+
+          <h2>Code</h2>
+          <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># A fenced code block with syntax highlighting</span>
+<span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"Hello, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+
+<span class="n">greet</span><span class="p">(</span><span class="s2">"notes"</span><span class="p">)</span> <span class="c1"># =&gt; Hello, notes</span>
+<span class="mi">3</span><span class="p">.</span><span class="nf">times</span> <span class="p">{</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span> <span class="nb">puts</span> <span class="n">i</span> <span class="p">}</span>
+</code></pre></div></div>
+
+          <h2>Table</h2>
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left">Syntax</th>
+                <th style="text-align: center">Renders as</th>
+                <th style="text-align: right">Count</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: left"><code>*em*</code></td>
+                <td style="text-align: center"><em>em</em></td>
+                <td style="text-align: right">1</td>
+              </tr>
+              <tr>
+                <td style="text-align: left"><code>**strong**</code></td>
+                <td style="text-align: center"><strong>strong</strong></td>
+                <td style="text-align: right">2</td>
+              </tr>
+              <tr>
+                <td style="text-align: left"><code>~~del~~</code></td>
+                <td style="text-align: center"><del>del</del></td>
+                <td style="text-align: right">3</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>Image</h2>
+          <p><img src="/assets/icons/apple-icon-180x180.png" alt="The site icon" title="The site icon"></p>
+
+          <h2>Media</h2>
+          <p>Markdown has no syntax for these, so each one is a one-line include from <code>_includes/notes/</code>.</p>
+
+          <h3>Image with a caption</h3>
+          {% include notes/figure.html src="/assets/icons/apple-icon-180x180.png" alt="The site icon" caption="An image with a caption, using figure.html." %}
+
+          <h3>Video</h3>
+          {% include notes/video.html src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" webm="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" title="A flower blooming" caption="A self-hosted video with controls, using video.html. Sample clip: MDN, CC0." %}
+
+          <h3>Looping clip</h3>
+          {% include notes/video.html src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" loop=true title="A flower blooming, looping" caption="The same clip with loop=true: silent and autoplaying, in place of a GIF." %}
+
+          <h3>YouTube</h3>
+          {% include notes/youtube.html id="jNQXAC9IVRw" title="Me at the zoo" caption="Loads the player only when clicked, using youtube.html." %}
+
+          <h3>Audio</h3>
+          {% include notes/audio.html src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" title="A T. rex roar" caption="An audio clip, using audio.html. Sample: MDN, CC0." %}
+
+          <h3>Link cards</h3>
+          {% include notes/link-card.html url="https://jekyllrb.com/docs/includes/" title="Includes" description="How Jekyll includes work, and how to pass parameters to them." %}
+          {% include notes/link-card.html url="/resume/med-aduh-resume.pdf" title="Resume (PDF)" description="A PDF is easier to read opened in its own tab than embedded in the page." image="/assets/icons/apple-icon-180x180.png" %}
+
+          <hr>
+
+          <p>Above is a horizontal rule. Footnotes collect below.</p>
+
+          <div class="footnotes" role="doc-endnotes">
+            <ol>
+              <li id="fn:1">
+                <p>The footnote text, with a link back. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+              </li>
+            </ol>
+          </div>
+        </article>
+
+        <article class="note" id="ruby-4-upgrade">
+          <time class="note-date" datetime="2026-10-02T21:10">October 2, 2026 at 9:10 PM</time>
+          <h1>Upgrading this site to Ruby 4</h1>
+          <p>Sample note. The site runs on Jekyll, and moving it to Ruby 4 on an arm64 Mac took a few tries.</p>
+          <h2>Steps</h2>
+          <ul>
+            <li>Pin the version in <code>.ruby-version</code></li>
+            <li>Install it with <code>rbenv install -s</code></li>
+            <li>Regenerate <code>Gemfile.lock</code> and rebuild</li>
+          </ul>
+          <p>The full setup is in the <a href="https://github.com/ramidem/ramidem.github.io" target="_blank" rel="noopener noreferrer">repo readme</a>.</p>
+        </article>
+
+        <article class="note" id="reading-list">
+          <time class="note-date" datetime="2026-09-21T10:05">September 21, 2026 at 10:05 AM</time>
+          <h1>Reading list</h1>
+          <p>Sample note.</p>
+          <ul class="task-list">
+            <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked">Designing Data-Intensive Applications</li>
+            <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked">A Philosophy of Software Design</li>
+            <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled">The Pragmatic Programmer</li>
+            <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled">Working in Public</li>
+          </ul>
+        </article>
+
+        <article class="note" id="weekend-checklist">
+          <time class="note-date" datetime="2026-08-08T08:30">August 8, 2026 at 8:30 AM</time>
+          <h1>Weekend checklist</h1>
+          <p>Sample note.</p>
+          <ul class="task-list">
+            <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked">Coffee</li>
+            <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked">Long walk</li>
+            <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled">Clean up the desk</li>
+            <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled">Write one note</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </div>
 </div>
+
+<script>
+  // Highlight the list row for the open note; mockup only.
+  (function () {
+    var rows = document.querySelectorAll(".note-row");
+    var share = document.querySelector(".notes-share");
+
+    function currentHash() {
+      var target = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      var note = target && target.closest(".note");
+      return note ? "#" + note.id : rows[0].getAttribute("href");
+    }
+
+    function select() {
+      var hash = currentHash();
+      rows.forEach(function (row) {
+        row.setAttribute("aria-current", row.getAttribute("href") === hash ? "true" : "false");
+      });
+    }
+
+    // Share the open note: the system share sheet where there is one, else copy the link.
+    share.addEventListener("click", function () {
+      var hash = currentHash();
+      var row = document.querySelector('.note-row[href="' + hash + '"] strong');
+      var url = location.origin + location.pathname + hash;
+
+      if (navigator.share) {
+        // Chrome refocuses the button with a focus ring when the share sheet closes; drop it.
+        navigator.share({ title: row ? row.textContent : document.title, url: url })
+          .catch(function () {})
+          .then(function () { share.blur(); });
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(url).then(function () {
+          share.dataset.copied = "";
+          setTimeout(function () { delete share.dataset.copied; }, 1500);
+        });
+      }
+    });
+
+    window.addEventListener("hashchange", select);
+    select();
+  })();
+
+  // Swap a YouTube thumbnail for the real player on click.
+  document.addEventListener("click", function (event) {
+    var link = event.target.closest("[data-youtube-id]");
+    if (!link) return;
+    event.preventDefault();
+
+    var iframe = document.createElement("iframe");
+    iframe.src = "https://www.youtube-nocookie.com/embed/" + link.dataset.youtubeId + "?autoplay=1";
+    iframe.title = link.dataset.title;
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.allowFullscreen = true;
+    iframe.referrerPolicy = "strict-origin-when-cross-origin";
+    link.replaceWith(iframe);
+  });
+
+  // Respect reduced motion: stop looping clips and give them controls instead.
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.querySelectorAll("video[data-loop]").forEach(function (video) {
+      video.removeAttribute("autoplay");
+      video.pause();
+      video.controls = true;
+    });
+  }
+</script>

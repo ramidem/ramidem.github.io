@@ -1,0 +1,15 @@
+{%- comment -%}
+  YouTube video. Shows the thumbnail and loads the player only when clicked;
+  without JavaScript it is a plain link to YouTube.
+  {% include notes/youtube.html id="jNQXAC9IVRw" title="Me at the zoo" caption="..." %}
+{%- endcomment -%}
+<figure class="note-figure note-embed">
+<a class="note-youtube" href="https://www.youtube.com/watch?v={{ include.id }}" data-youtube-id="{{ include.id }}" data-title="{{ include.title | escape }}">
+<img src="https://i.ytimg.com/vi/{{ include.id }}/hqdefault.jpg" alt="" loading="lazy">
+<span class="note-youtube-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg></span>
+<span class="visually-hidden">Play video: {{ include.title | escape }}</span>
+</a>
+{%- if include.caption %}
+<figcaption>{{ include.caption }}</figcaption>
+{%- endif %}
+</figure>
