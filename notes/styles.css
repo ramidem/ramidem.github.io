@@ -4,6 +4,7 @@
 
 :root {
   --notes-accent: #c7372f;
+  --notes-accent-light: #f3d3d1; /* #c7372f at about 22% on white */
   --notes-selected: #e6e6e9;
   --notes-sidebar: #f2f2f4;
   --notes-sidebar-active: #dcdcdf;
@@ -270,9 +271,45 @@ body {
   width: 100%;
 }
 
+.notes-search input:focus {
+  outline: 2px solid var(--notes-accent);
+  outline-offset: 0;
+}
+
 .notes-scroll {
   overflow-y: auto;
   padding: 0 8px 12px;
+}
+
+/* Search: while there's a query, the results replace the list. */
+.notes-results,
+.notes-no-results,
+.notes-app--searching .notes-scroll > :not(.notes-results, .notes-no-results) {
+  display: none;
+}
+
+.notes-app--searching .notes-results,
+.notes-app--searching .notes-no-results:not([hidden]) {
+  display: block;
+}
+
+.notes-results {
+  padding-top: 8px;
+}
+
+.note-row-excerpt {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: var(--notes-muted);
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.note-row strong mark,
+.note-row-excerpt mark {
+  background: var(--notes-accent-light);
+  border-radius: 2px;
+  color: var(--notes-text);
 }
 
 .notes-empty {

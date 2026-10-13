@@ -43,6 +43,18 @@ http://localhost:4317/
 http://localhost:4317/resume/
 ```
 
+## Notes Search
+
+Search on `/notes` uses [Pagefind](https://pagefind.app/), which indexes the built site. The deploy
+workflow builds the index after Jekyll. Locally, with the dev server running, build it into `_site`:
+
+```sh
+npx pagefind@1.5.2 --site _site
+```
+
+Re-run it to pick up note changes. Without an index, the search box falls back to matching note
+titles and previews.
+
 ## Resume Checks
 
 Check resume JavaScript syntax:
