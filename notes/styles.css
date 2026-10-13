@@ -65,8 +65,10 @@ body {
 
 .folder-list a,
 .folder-list a:visited,
+.folder-list a:hover,
 .note-row,
-.note-row:visited {
+.note-row:visited,
+.note-row:hover {
   color: inherit;
   text-decoration: none;
 }
@@ -140,7 +142,7 @@ body {
   color: var(--notes-accent);
 }
 
-.folder-missing {
+.folder-list a.folder-missing {
   font-style: italic;
   text-decoration: underline dashed var(--notes-accent);
 }
@@ -639,7 +641,8 @@ li:last-child > .note-row::after {
 }
 
 .note .note-card,
-.note .note-card:visited {
+.note .note-card:visited,
+.note .note-card:hover {
   align-items: center;
   background: #fafafa;
   border: 1px solid var(--notes-line);
@@ -708,10 +711,6 @@ li:last-child > .note-row::after {
   line-height: 0;
 }
 
-.note .footnote {
-  text-decoration: none;
-}
-
 .note .footnotes {
   border-top: 1px solid var(--notes-line);
   color: var(--notes-muted);
@@ -722,10 +721,6 @@ li:last-child > .note-row::after {
 .note .footnotes p,
 .note .footnotes li {
   font-size: 13px;
-}
-
-.note .reversefootnote {
-  text-decoration: none;
 }
 
 /* Tablet: drop the sidebar */

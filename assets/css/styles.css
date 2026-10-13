@@ -43,6 +43,12 @@ main {
 a,
 a:visited {
   color: #c7372f;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
 }
 
 h1 {
