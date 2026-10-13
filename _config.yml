@@ -9,7 +9,7 @@ logo: /assets/icons/apple-icon-180x180.png
 
 exclude: ["CNAME", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
 
-# Keep a locally built search index across rebuilds (see README: Notes search)
+# Keep a locally built search index across rebuilds (see README: Notes > Search)
 keep_files: ["pagefind"]
 
 # Dependencies
