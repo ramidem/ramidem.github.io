@@ -74,4 +74,13 @@ pdfinfo resume/med-aduh-resume.pdf | rg 'Pages|File size'
 
 ## Deploy
 
-Push to `master`. GitHub Pages serves the static site from this repository.
+Push to `master`. The `Deploy site` workflow (`.github/workflows/pages.yml`) builds the site
+with the Gemfile's Jekyll on the Ruby in `.ruby-version`, the same as local development, and
+deploys it to GitHub Pages.
+
+This needs the repository's Pages source set to GitHub Actions: Settings → Pages →
+Build and deployment → Source: **GitHub Actions**.
+
+`Gemfile.lock` lists both `arm64-darwin` (local) and `x86_64-linux` (the build runner). Keep both
+when updating gems; if a platform goes missing, add it back with
+`bundle lock --add-platform x86_64-linux`.
