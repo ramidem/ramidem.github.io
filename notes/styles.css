@@ -36,12 +36,25 @@ body {
   padding: 0;
 }
 
+/* The panes are white with rounded outer corners; the app behind them takes the
+   sidebar's gray so the corners blend into the site border. */
 .notes-app {
-  background: #fff;
+  --notes-radius: 10px;
+  background: var(--notes-sidebar);
   display: grid;
   flex: 1;
   grid-template-columns: 200px 280px 1fr;
   min-height: 0;
+  position: relative;
+}
+
+/* Desktop: the sidebar is open by default; the toggle can hide it. */
+.notes-app--sidebar-closed {
+  grid-template-columns: 280px 1fr;
+}
+
+.notes-app--sidebar-closed .notes-sidebar {
+  display: none;
 }
 
 :where(.notes-app) ul {
@@ -97,7 +110,6 @@ body {
 
 .notes-sidebar {
   background: var(--notes-sidebar);
-  border-right: 1px solid var(--notes-line);
   display: flex;
   flex-direction: column;
   min-height: 0;
@@ -109,15 +121,17 @@ body {
 }
 
 /* The sidebar sits flush against the site border; only its right side is padded. */
+/* Same box as the "← home" row at the top of the list (7px down, 26px tall), so
+   the heading lines up with it. */
 .notes-sidebar .notes-toolbar {
   align-items: flex-start;
   height: auto;
-  padding: 0 14px 12px 0;
+  padding: 7px 14px 12px 0;
 }
 
 .notes-heading {
   font-size: 22px;
-  line-height: 1;
+  line-height: 26px;
   white-space: nowrap;
   margin: 0;
 }
@@ -152,19 +166,53 @@ body {
   margin-left: auto;
 }
 
-.sidebar-home {
+/* "← home" and the sidebar toggle sit at the top of the list, above search. */
+.notes-list-top {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 7px 0 12px;
+}
+
+.notes-list-home {
   line-height: 1;
-  margin-top: auto;
-  padding: 14px 18px 0 0;
+}
+
+.notes-sidebar-toggle {
+  appearance: none;
+  background: none;
+  border: 0;
+  border-radius: 6px;
+  color: var(--notes-muted);
+  cursor: pointer;
+  display: flex;
+  padding: 5px;
+}
+
+.notes-sidebar-toggle:hover {
+  background: var(--notes-sidebar);
+  color: var(--notes-text);
+}
+
+.notes-sidebar-toggle:focus {
+  outline: none;
+}
+
+.notes-sidebar-toggle:focus-visible {
+  box-shadow: 0 0 0 2px var(--notes-accent);
 }
 
 /* Note list */
 
 .notes-list {
+  background: #fff;
+  border-bottom-left-radius: var(--notes-radius);
   border-right: 1px solid var(--notes-line);
+  border-top-left-radius: var(--notes-radius);
   display: flex;
   flex-direction: column;
   min-height: 0;
+  overflow: hidden;
 }
 
 /* Pinned to the note pane's top-right corner: no bar, and it stays put while the
@@ -291,10 +339,14 @@ li:last-child > .note-row::after {
 /* Note body */
 
 .notes-body {
+  background: #fff;
+  border-bottom-right-radius: var(--notes-radius);
+  border-top-right-radius: var(--notes-radius);
   display: flex;
   flex-direction: column;
   min-height: 0;
   min-width: 0;
+  overflow: hidden;
   position: relative;
 }
 
@@ -734,6 +786,20 @@ li:last-child > .note-row::after {
     display: none;
   }
 
+  /* Smaller screens: the sidebar is hidden by default; the toggle slides it in
+     as a drawer from the window's edge, over the site border and the list. */
+  .notes-app--sidebar-open .notes-sidebar {
+    bottom: 0;
+    box-shadow: 8px 0 24px rgb(0 0 0 / 12%);
+    display: flex;
+    left: 0;
+    padding: 16px 0 16px 16px;
+    position: fixed;
+    top: 0;
+    width: 236px;
+    z-index: 3;
+  }
+
   .notes-body-scroll {
     padding: 20px 28px 40px;
   }
@@ -744,6 +810,12 @@ li:last-child > .note-row::after {
 @media (max-width: 699px) {
   .notes-app {
     grid-template-columns: 1fr;
+  }
+
+  /* Only one pane shows at a time, so round all its corners. */
+  .notes-list,
+  .notes-body {
+    border-radius: var(--notes-radius);
   }
 
   .notes-body {
