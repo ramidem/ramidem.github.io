@@ -410,8 +410,9 @@ li:last-child > .note-row::after {
   display: none;
 }
 
+/* Matches "← home" at the top of the list. */
 .notes-back {
-  font-size: 15px;
+  line-height: 1;
   margin-right: auto;
 }
 
