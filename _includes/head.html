@@ -24,6 +24,9 @@
 
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/reset.css">
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
+  {% if page.styles %}
+  <link rel="stylesheet" href="{{ site.baseurl }}{{ page.styles }}">
+  {% endif %}
 
   <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
 
