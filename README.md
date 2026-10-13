@@ -12,15 +12,25 @@ Static GitHub Pages site for `ramidem.github.io`.
 
 ## Local Development
 
-Build the site with Jekyll:
+One-time setup (Ruby version is pinned in `.ruby-version`):
 
 ```sh
-RBENV_VERSION=3.1.2 bundle exec jekyll build
+brew install rbenv ruby-build   # skip if already installed
+rbenv install -s                 # installs the version in .ruby-version
+gem install bundler -v 2.3.26
+bundle install
 ```
 
-Serve the generated site locally:
+Run a dev server with live reload:
 
 ```sh
+bundle exec jekyll serve --livereload --port 4317
+```
+
+Or build once and serve the static output:
+
+```sh
+bundle exec jekyll build
 python3 -m http.server 4317 --directory _site
 ```
 
