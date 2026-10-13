@@ -27,10 +27,8 @@
   if (!link) return;
 
   // Rows: show only this folder's notes, and hide groups left empty.
-  var shown = 0;
   app.querySelectorAll(".notes-scroll li[data-folder]").forEach(function (row) {
     row.hidden = row.dataset.folder !== folder;
-    if (!row.hidden) shown += 1;
   });
   app.querySelectorAll(".notes-scroll ul").forEach(function (group) {
     var empty = !group.querySelector("li:not([hidden])");
@@ -39,9 +37,7 @@
     if (heading && heading.classList.contains("list-group")) heading.hidden = empty;
   });
 
-  // Header, sidebar highlight, and the phone back link follow the folder.
-  app.querySelector(".list-title").textContent = folder;
-  app.querySelector(".list-count").textContent = shown + (shown === 1 ? " note" : " notes");
+  // Sidebar highlight and the phone back link follow the folder.
   app.querySelector("[data-all-notes]").removeAttribute("aria-current");
   link.setAttribute("aria-current", "true");
 

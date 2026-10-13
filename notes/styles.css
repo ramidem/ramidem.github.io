@@ -165,30 +165,21 @@ body {
   min-height: 0;
 }
 
-.notes-list .notes-toolbar {
-  justify-content: space-between;
-}
-
-.list-title {
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.list-count {
-  color: var(--notes-muted);
-  font-size: 11px;
-}
-
+/* Pinned to the note pane's top-right corner: no bar, and it stays put while the
+   note scrolls. The white background keeps it readable over text passing under it. */
 .notes-share {
   appearance: none;
-  background: none;
+  background: #fff;
   border: 0;
   border-radius: 6px;
   color: var(--notes-muted);
   cursor: pointer;
   display: flex;
   padding: 5px;
-  position: relative;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 1;
 }
 
 .notes-share:hover {
@@ -216,7 +207,7 @@ body {
 }
 
 .notes-search {
-  padding: 0 12px 8px;
+  padding: 12px 12px 8px;
 }
 
 .notes-search input {
@@ -302,6 +293,7 @@ li:last-child > .note-row::after {
   flex-direction: column;
   min-height: 0;
   min-width: 0;
+  position: relative;
 }
 
 /* The note pane's toolbar only holds the phone back link. */

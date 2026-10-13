@@ -32,16 +32,6 @@
     </nav>
 
     <section class="notes-list" aria-label="Notes">
-      <div class="notes-toolbar">
-        <div>
-          <div class="list-title">{{ folder | default: "All Notes" }}</div>
-          <div class="list-count">{{ count }} {% if count == 1 %}note{% else %}notes{% endif %}</div>
-        </div>
-        {%- if current %}
-        <button class="notes-share" type="button" aria-label="Share this note" data-path="{{ current.url | relative_url }}" data-title="{{ current.title | escape }}"><svg class="notes-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7" /><path d="M16 6l-4-4-4 4" /><path d="M12 2v13" /></svg></button>
-        {%- endif %}
-      </div>
-
       <div class="notes-search">
         <input type="search" placeholder="Search" aria-label="Search notes">
       </div>
@@ -73,6 +63,10 @@
       <div class="notes-toolbar">
         <a class="notes-back" href="{{ '/notes/' | relative_url }}">&lsaquo; <span>Notes</span></a>
       </div>
+
+      {%- if current %}
+      <button class="notes-share" type="button" aria-label="Share this note" data-path="{{ current.url | relative_url }}" data-title="{{ current.title | escape }}"><svg class="notes-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7" /><path d="M16 6l-4-4-4 4" /><path d="M12 2v13" /></svg></button>
+      {%- endif %}
 
       <div class="notes-body-scroll">
         {%- if current %}
