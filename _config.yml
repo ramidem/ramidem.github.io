@@ -11,3 +11,22 @@ highlighter: rouge
 
 # Permalinks
 permalink: pretty
+
+# Dates are shown in this timezone (GitHub builds in UTC otherwise)
+timezone: Asia/Manila
+
+# Notes are posts: /notes/<folder>/<filename-slug>/ (or /notes/<slug>/ without a folder),
+# rendered in the notes app layout. Folder pages live in notes/<folder>/index.html.
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: note
+      permalink: /notes/:categories/:title/
+      styles: /notes/styles.css
+  - scope:
+      path: "notes"
+      type: pages
+    values:
+      styles: /notes/styles.css

@@ -1,0 +1,16 @@
+---
+layout: base
+---
+{%- comment -%}
+  A folder page, /notes/<folder>/. Each folder needs one file, notes/<folder>/index.html:
+    ---
+    layout: folder
+    folder: <folder>
+    ---
+  Opens on the folder's first pinned note, else its newest.
+{%- endcomment -%}
+{%- assign folder = page.folder -%}
+{%- assign folder_posts = site.posts | where_exp: "post", "post.categories.first == folder" -%}
+{%- assign pinned = folder_posts | where: "pinned", true -%}
+{%- assign current = pinned.first | default: folder_posts.first -%}
+{% include notes/app.html current=current body=current.content view="list" folder=folder %}

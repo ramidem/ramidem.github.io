@@ -49,6 +49,11 @@ body {
   padding: 0;
 }
 
+/* Rows and groups hidden by the list filter in notes.js */
+.notes-app [hidden] {
+  display: none;
+}
+
 :where(.notes-app) li {
   display: block;
   margin: 0;
@@ -133,6 +138,11 @@ body {
 
 .folder-list .notes-icon {
   color: var(--notes-accent);
+}
+
+.folder-missing {
+  font-style: italic;
+  text-decoration: underline dashed var(--notes-accent);
 }
 
 .folder-count {
@@ -224,6 +234,11 @@ body {
   padding: 0 8px 12px;
 }
 
+.notes-empty {
+  color: var(--notes-muted);
+  padding: 12px 10px;
+}
+
 .list-group {
   font-size: 11px;
   font-weight: 700;
@@ -307,17 +322,6 @@ li:last-child > .note-row::after {
 .note {
   margin: 0 auto;
   max-width: 680px;
-}
-
-/* Show the first note, or the one holding the URL target (the note itself or,
-   for footnote links, something inside it). */
-.note + .note,
-.notes-body:has(.note:target, .note :target) .note:not(:target, :has(:target)) {
-  display: none;
-}
-
-.note:is(:target, :has(:target)) {
-  display: block;
 }
 
 .note-date {
@@ -759,11 +763,12 @@ li:last-child > .note-row::after {
     display: none;
   }
 
-  .notes-app:has(.note:target, .note :target) .notes-list {
+  /* On a note's own page, phones show the note; on /notes/, the list. */
+  .notes-app--note .notes-list {
     display: none;
   }
 
-  .notes-app:has(.note:target, .note :target) .notes-body {
+  .notes-app--note .notes-body {
     display: flex;
   }
 

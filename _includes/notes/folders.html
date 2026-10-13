@@ -1,0 +1,21 @@
+{%- comment -%}
+  Folders for the sidebar. Folders are one level deep: a note's folder is its
+  single category (`category: jekyll` in front matter). Notes without one only
+  appear under All Notes. Each folder links to its page, notes/<folder>/index.html;
+  a folder without that file is marked so it's easy to spot.
+{%- endcomment -%}
+{%- assign folder_names = "" | split: "" -%}
+{%- for post in site.posts -%}
+  {%- if post.categories.size > 0 -%}
+    {%- assign folder_names = folder_names | push: post.categories.first -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign folder_names = folder_names | uniq | sort -%}
+{%- for folder in folder_names -%}
+  {%- assign folder_posts = site.posts | where_exp: "post", "post.categories.first == folder" -%}
+  {%- assign folder_url = "/notes/" | append: folder | append: "/" -%}
+  {%- assign folder_page = site.pages | where: "url", folder_url | first %}
+<li><a href="{{ folder_url | relative_url }}" data-folder="{{ folder | escape }}"
+  {%- if folder == include.current_folder %} aria-current="true"{% endif %}
+  {%- unless folder_page %} class="folder-missing" title="No folder page yet: add notes/{{ folder }}/index.html"{% endunless %}><svg class="notes-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg>{{ folder }}<span class="folder-count">{{ folder_posts.size }}</span></a></li>
+{%- endfor -%}
