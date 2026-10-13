@@ -43,10 +43,12 @@
   <meta name="msapplication-TileImage" content="{{ site.baseurl }}/assets/icons/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
 
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/reset.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
+  {%- comment -%} ?v=<build time> makes browsers fetch fresh CSS after each build. {%- endcomment %}
+  {%- assign asset_version = site.time | date: "%s" %}
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/reset.css?v={{ asset_version }}">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css?v={{ asset_version }}">
   {% if page.styles %}
-  <link rel="stylesheet" href="{{ site.baseurl }}{{ page.styles }}">
+  <link rel="stylesheet" href="{{ site.baseurl }}{{ page.styles }}?v={{ asset_version }}">
   {% endif %}
 
   <link rel="canonical" href="{{ page.url | absolute_url }}">
