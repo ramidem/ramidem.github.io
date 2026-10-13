@@ -1,7 +1,9 @@
-url: "https://ramidem.github.io/"
+url: "https://ramidem.github.io"
 baseurl: ""
 author: "Med Aduh"
 tagline: "Software engineer building full-stack product systems and operational tools."
+# Image for link previews (Open Graph / Twitter cards)
+logo: /assets/icons/apple-icon-180x180.png
 
 exclude: ["CNAME", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
 

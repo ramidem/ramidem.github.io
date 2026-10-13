@@ -1,8 +1,29 @@
+{%- comment -%}
+  Per-page title and description: a note's title/description (else its first
+  paragraph), a folder page's folder name, or the site defaults.
+{%- endcomment -%}
+{%- if page.title -%}
+  {%- assign page_title = page.title -%}
+{%- elsif page.folder -%}
+  {%- assign page_title = page.folder -%}
+{%- endif -%}
+{%- if page.description -%}
+  {%- assign page_description = page.description -%}
+{%- elsif page.collection == "posts" -%}
+  {%- assign page_description = page.excerpt | strip_html | strip_newlines | strip | truncate: 160 -%}
+{%- elsif page.folder -%}
+  {%- assign page_description = "Notes in the " | append: page.folder | append: " folder." -%}
+{%- else -%}
+  {%- assign page_description = site.tagline -%}
+{%- endif -%}
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
-  <title>{% if site.author %}{{ site.author }} &#8226; {% endif %}{{ site.tagline | strip_html
-    }}</title>
+  {%- if page_title %}
+  <title>{{ page_title | escape }} &#8226; {{ site.author }}</title>
+  {%- else %}
+  <title>{% if site.author %}{{ site.author }} &#8226; {% endif %}{{ site.tagline | strip_html }}</title>
+  {%- endif %}
 
   <link rel="apple-touch-icon" sizes="57x57" href="{{ site.baseurl }}/assets/icons/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="{{ site.baseurl }}/assets/icons/apple-icon-60x60.png">
@@ -28,31 +49,31 @@
   <link rel="stylesheet" href="{{ site.baseurl }}{{ page.styles }}">
   {% endif %}
 
-  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
 
   <meta name="author" content="{{ site.author }}">
-  <meta name="description" content="{{ site.tagline }}" />
+  <meta name="description" content="{{ page_description | escape }}" />
 
   <!-- Open Graph tags -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="{{ site.tagline }}" />
-  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
-  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}{{ site.logo }}" />
-  <meta property="og:description" content="{{ site.description }}" />
+  <meta property="og:type" content="{% if page.collection == 'posts' %}article{% else %}website{% endif %}" />
+  <meta property="og:title" content="{{ page_title | default: site.tagline | escape }}" />
+  <meta property="og:url" content="{{ page.url | absolute_url }}" />
+  <meta property="og:image" content="{{ site.logo | absolute_url }}" />
+  <meta property="og:description" content="{{ page_description | escape }}" />
   <meta property="og:site_name" content="{{ site.tagline }}">
 
   <!-- Twitter Card tags -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="{{ site.tagline }}">
+  <meta name="twitter:title" content="{{ page_title | default: site.tagline | escape }}">
   {% if site.twitter.site %}
   <meta name="twitter:site" content="{{ site.twitter.site }}">
   {% endif %}
   {% if site.twitter.creator %}
   <meta name="twitter:creator" content="{{ site.twitter.creator }}">
   {% endif %}
-  <meta name="twitter:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
-  <meta name="twitter:description" content="{{ site.description }}">
-  <meta name="twitter:image:src" content="{{ site.url }}{{ site.baseurl }}{{ site.logo }}">
+  <meta name="twitter:url" content="{{ page.url | absolute_url }}">
+  <meta name="twitter:description" content="{{ page_description | escape }}">
+  <meta name="twitter:image:src" content="{{ site.logo | absolute_url }}">
 
   {% if site.include_analytics %}
   {% include analytics.html %}
