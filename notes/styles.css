@@ -216,9 +216,21 @@ body {
   overflow: hidden;
 }
 
-/* Pinned to the note pane's top-right corner: no bar, and it stays put while the
-   note scrolls. The white background keeps it readable over text passing under it. */
-.notes-share {
+/* Subscribe (feed) and share, pinned to the note pane's top-right corner: no bar,
+   and they stay put while the note scrolls. The white background keeps them
+   readable over text passing under them. */
+.notes-actions {
+  display: flex;
+  gap: 4px;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 1;
+}
+
+.notes-share,
+.notes-subscribe,
+.notes-subscribe:visited {
   appearance: none;
   background: #fff;
   border: 0;
@@ -227,33 +239,39 @@ body {
   cursor: pointer;
   display: flex;
   padding: 5px;
-  position: absolute;
-  right: 12px;
-  top: 12px;
-  z-index: 1;
+  position: relative;
 }
 
+.notes-subscribe .notes-icon circle {
+  fill: currentColor;
+}
+
+.notes-subscribe:hover,
 .notes-share:hover {
   background: var(--notes-sidebar);
   color: var(--notes-text);
 }
 
-.notes-share:focus {
+.notes-share:focus,
+.notes-subscribe:focus {
   outline: none;
 }
 
-.notes-share:focus-visible {
+.notes-share:focus-visible,
+.notes-subscribe:focus-visible {
   box-shadow: 0 0 0 2px var(--notes-accent);
 }
 
 .notes-share[data-copied]::after {
+  background: #fff;
+  border-radius: 4px;
   color: var(--notes-muted);
+  padding: 2px 6px;
   content: "Link copied";
   font-size: 11px;
   position: absolute;
-  right: calc(100% + 6px);
-  top: 50%;
-  transform: translateY(-50%);
+  right: 0;
+  top: calc(100% + 4px);
   white-space: nowrap;
 }
 

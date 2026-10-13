@@ -19,6 +19,15 @@ highlighter: rouge
 # Permalinks
 permalink: pretty
 
+# Atom feed of the notes (jekyll-feed). The feed's title and subtitle come from
+# title and description; nothing else on the site uses them.
+plugins:
+  - jekyll-feed
+title: "Med Aduh"
+description: "Notes by Med Aduh."
+feed:
+  path: notes/feed.xml
+
 # Dates are shown in this timezone (GitHub builds in UTC otherwise)
 timezone: Asia/Manila
 
