@@ -2,6 +2,8 @@ url: "https://ramidem.github.io"
 baseurl: ""
 author: "Med Aduh"
 tagline: "Software engineer building full-stack product systems and operational tools."
+# GoatCounter site code for analytics (<code>.goatcounter.com); empty turns it off
+goatcounter: "ramidem"
 # Image for link previews (Open Graph / Twitter cards)
 logo: /assets/icons/apple-icon-180x180.png
 

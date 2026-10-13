@@ -1,11 +1,11 @@
-<!-- Here you can add your Google Analytics Tracking code. If you do so, do not
-forget to set the include_analytics attribute to true on the _config.yml file -->
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-50820313-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-50820313-1');
-</script>
+{%- comment -%}
+  GoatCounter (https://www.goatcounter.com): cookie-free page counts. Set `goatcounter`
+  in _config.yml to the site code (the "<code>" in <code>.goatcounter.com). Loaded only
+  in production builds (JEKYLL_ENV=production, as in the deploy workflow).
+  Counts the path only: ?q= searches would otherwise show up as separate pages and log
+  what people searched for.
+{%- endcomment -%}
+{%- if site.goatcounter and jekyll.environment == "production" %}
+<script>window.goatcounter = { path: function () { return location.pathname; } };</script>
+<script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+{%- endif %}
