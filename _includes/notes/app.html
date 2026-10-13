@@ -81,9 +81,9 @@
 
       {%- comment -%} Pinned to the note pane's top-right corner. {%- endcomment %}
       <div class="notes-actions">
-        <a class="notes-subscribe" href="{{ site.feed.path | default: 'feed.xml' | prepend: '/' | relative_url }}" title="Subscribe (RSS)" aria-label="Subscribe to notes (RSS feed)"><svg class="notes-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 11a9 9 0 0 1 9 9" /><path d="M4 4a16 16 0 0 1 16 16" /><circle cx="5" cy="19" r="1" /></svg></a>
+        <a class="notes-subscribe" data-goatcounter-click="notes-subscribe" data-goatcounter-title="Notes feed" href="{{ site.feed.path | default: 'feed.xml' | prepend: '/' | relative_url }}" title="Subscribe (RSS)" aria-label="Subscribe to notes (RSS feed)"><svg class="notes-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 11a9 9 0 0 1 9 9" /><path d="M4 4a16 16 0 0 1 16 16" /><circle cx="5" cy="19" r="1" /></svg></a>
         {%- if current %}
-        <button class="notes-share" type="button" aria-label="Share this note" data-path="{{ current.url | relative_url }}" data-title="{{ current.title | escape }}"><svg class="notes-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7" /><path d="M16 6l-4-4-4 4" /><path d="M12 2v13" /></svg></button>
+        <button class="notes-share" type="button" aria-label="Share this note" data-goatcounter-click="note-share" data-goatcounter-title="Share {{ current.title | escape }}" data-path="{{ current.url | relative_url }}" data-title="{{ current.title | escape }}"><svg class="notes-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7" /><path d="M16 6l-4-4-4 4" /><path d="M12 2v13" /></svg></button>
         {%- endif %}
       </div>
 
