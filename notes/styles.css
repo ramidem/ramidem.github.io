@@ -228,6 +228,8 @@ body {
   z-index: 1;
 }
 
+.notes-edit,
+.notes-edit:visited,
 .notes-share,
 .notes-subscribe,
 .notes-subscribe:visited {
@@ -246,17 +248,20 @@ body {
   fill: currentColor;
 }
 
+.notes-edit:hover,
 .notes-subscribe:hover,
 .notes-share:hover {
   background: var(--notes-sidebar);
   color: var(--notes-text);
 }
 
+.notes-edit:focus,
 .notes-share:focus,
 .notes-subscribe:focus {
   outline: none;
 }
 
+.notes-edit:focus-visible,
 .notes-share:focus-visible,
 .notes-subscribe:focus-visible {
   box-shadow: 0 0 0 2px var(--notes-accent);
