@@ -82,7 +82,7 @@ folder: jekyll
 ### How it works
 
 - `_includes/notes/app.html` draws the panes; `_layouts/note.html`, `_layouts/folder.html`, and
-  `notes/index.html` use it. Styles in `notes/styles.css`; `notes/notes.js` adds the sidebar
+  `notes/index.html` use it. Styles in `notes/styles.css`; `notes/js/*.js` adds the sidebar
   toggle, share, search, and list memory (pages work without it).
 - Lists show Pinned, then notes by month. A note's page lists All Notes, or its folder if you came
   from there.

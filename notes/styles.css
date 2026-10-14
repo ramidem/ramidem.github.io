@@ -63,7 +63,7 @@ body {
   padding: 0;
 }
 
-/* Rows and groups hidden by the list filter in notes.js */
+/* Rows and groups hidden by the list filter in the notes scripts */
 .notes-app [hidden] {
   display: none;
 }
