@@ -247,7 +247,7 @@
     // reload doesn't jump from partial to full results.
     if (!pagefindReady && !restoring) filterList(query);
     loadPagefind().then(function (pagefind) {
-      if (!pagefind) return filterList(query);
+      if (!pagefind) return input.value.trim() === query ? filterList(query) : undefined;
       var folder = folderScope();
       return pagefind.debouncedSearch(query, folder ? { filters: { folder: folder } } : {}, 150)
         .then(function (search) {
@@ -294,7 +294,7 @@
       navigator.clipboard.writeText(url).then(function () {
         share.dataset.copied = "";
         setTimeout(function () { delete share.dataset.copied; }, 1500);
-      });
+      }).catch(function () {});
     }
   });
 })();
@@ -303,6 +303,7 @@
 document.addEventListener("click", function (event) {
   var link = event.target.closest("[data-youtube-id]");
   if (!link) return;
+  if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
   event.preventDefault();
 
   var iframe = document.createElement("iframe");
@@ -312,6 +313,7 @@ document.addEventListener("click", function (event) {
   iframe.allowFullscreen = true;
   iframe.referrerPolicy = "strict-origin-when-cross-origin";
   link.replaceWith(iframe);
+  iframe.focus();
 });
 
 // Respect reduced motion: stop looping clips and give them controls instead.
