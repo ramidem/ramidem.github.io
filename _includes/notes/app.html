@@ -82,7 +82,7 @@
       {%- comment -%} Pinned to the note pane's top-right corner. {%- endcomment %}
       <div class="notes-actions">
         {%- if current %}
-        <a class="notes-edit" href="https://github.com/ramidem/ramidem.github.io/edit/master/{{ current.path }}" target="_blank" rel="noopener" title="Edit on GitHub" aria-label="Edit this note on GitHub"><svg class="notes-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a>
+        <a class="notes-edit" data-goatcounter-click="note-edit" data-goatcounter-title="Edit {{ current.title | escape }}" href="https://github.com/ramidem/ramidem.github.io/edit/master/{{ current.path }}" target="_blank" rel="noopener" title="Edit on GitHub" aria-label="Edit this note on GitHub"><svg class="notes-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a>
         {%- endif %}
         <a class="notes-subscribe" data-goatcounter-click="notes-subscribe" data-goatcounter-title="Notes feed" href="{{ site.feed.path | default: 'feed.xml' | prepend: '/' | relative_url }}" title="Subscribe (RSS)" aria-label="Subscribe to notes (RSS feed)"><svg class="notes-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 11a9 9 0 0 1 9 9" /><path d="M4 4a16 16 0 0 1 16 16" /><circle cx="5" cy="19" r="1" /></svg></a>
         {%- if current %}
