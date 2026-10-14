@@ -101,7 +101,7 @@
             {%- if current.categories.first %} data-pagefind-filter="folder:{{ current.categories.first | escape }}"{% endif %}
           {%- endif %}>
           <time class="note-date" datetime="{{ current.date | date_to_xmlschema }}" data-pagefind-ignore>{{ current.date | date: "%B %-d, %Y at %-I:%M %p" }}</time>
-          <h1 data-pagefind-meta="title">{{ current.title }}</h1>
+          <h1 data-pagefind-meta="title">{{ current.title | escape }}</h1>
           {{ include.body }}
         </article>
         {%- endif %}
