@@ -2,7 +2,7 @@
 title: Hello, notes
 date: 2026-10-13 14:27:00 +0800
 description: Every piece of markdown a note can use
-pinned: true
+pinned: false
 ---
 Sample note. Every piece of markdown a note can use, so the styles get tested in one place.
 
