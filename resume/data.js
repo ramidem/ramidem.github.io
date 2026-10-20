@@ -113,7 +113,7 @@ window.resumeData = {
       summary: "",
       bullets: [
         "Led a content platform from scratch (React), collaborating with the client's team and guiding developers, so staff could manage marketplace content from one screen.",
-        "Set up the Google Cloud deployment pipeline (Docker, CI/CD), so every change was checked before going live."
+        "Set up the Google Cloud DevOps pipeline (Docker, CI/CD), so every change was checked before going live."
       ]
     },
     {
@@ -122,7 +122,7 @@ window.resumeData = {
       dates: "Feb 2026 - Jun 2026",
       summary: "",
       bullets: [
-        "Led a full-stack HR and payroll system from scratch (TypeScript) using AI coding tools, with daily Agile standups, so companies could manage staff, leave and payroll in one place."
+        "Led a full-stack HR and payroll system from scratch (TypeScript) using AI coding tools, with daily Agile standups, so companies could manage staff, leave and payroll in one place, with each person seeing only what they need."
       ]
     },
     {
@@ -131,7 +131,7 @@ window.resumeData = {
       dates: "May 2026 - Jun 2026",
       summary: "",
       bullets: [
-        "Led a full-stack operations tool from scratch, setting priorities with the team and explaining choices to non-technical staff, so sales teams could track accounts and reports in one place."
+        "Led a full-stack operations tool from scratch, setting priorities with the team and explaining choices to non-technical staff, so sales teams could track accounts, visits and reports in one place and export them when needed."
       ]
     }
   ],
