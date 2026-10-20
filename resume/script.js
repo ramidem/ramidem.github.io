@@ -23,7 +23,7 @@
     var contact = document.querySelector("[data-contact]");
 
     document.querySelector("[data-name]").textContent = profile.name;
-    document.querySelector("[data-headline]").textContent = profile.headline;
+    document.querySelector("[data-headline]").textContent = profile.summary;
 
     clear(contact);
     contact.appendChild(el("span", "", profile.location));

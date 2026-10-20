@@ -1,12 +1,11 @@
 window.resumeData = {
   profile: {
     name: "Med Aduh",
-    headline: "Software Engineer | Backend-leaning full-stack systems and product delivery",
     location: "Davao City, Philippines",
     email: "im.ramidem@gmail.com",
     github: "https://github.com/ramidem",
     summary:
-      "Full-stack engineer using AI-assisted workflows to ship reliable product systems, backend services, and operational tooling.",
+      "Full-stack developer with nearly six years of experience building software that people use every day, from money transfers and online shops to HR and payroll. I turn what teams ask for into tools that work, and I use AI tools to deliver faster and more reliably.",
     updated: "2026-06-30"
   },
   lenses: [
@@ -88,17 +87,41 @@ window.resumeData = {
       location: "Remote",
       summary: "",
       bullets: [
-        "Shipped client and product engineering across NDA platforms using full-stack and AI-assisted workflows across React, TypeScript, Next.js, NestJS, Firebase, Strapi, MySQL/PostgreSQL, and Google Cloud."
+        "Built and maintained web products for clients across finance, retail, HR, healthcare and more, so their teams and customers could do their daily work in one place."
       ]
     },
     {
-      organization: "Healthcare Forms Companion",
-      role: "AI Product Engineer",
-      dates: "Jun 2026",
-      location: "Healthcare forms and PDF workflow platform",
+      organization: "Financial Services Platform",
+      role: "Software Engineer",
+      dates: "Jan 2021 - Nov 2025",
+      location: "Financial operations and reporting workflows",
       summary: "",
       bullets: [
-        "Shipped patient/admin form workflows with authenticated PDF previews, editable fields, invite flows, and duplicate-save protections."
+        "Maintained a financial services platform for nearly five years, covering customer verification, money transfers, daily reports and receipts, so branch staff could finish their daily work more smoothly.",
+        "Built the behind-the-scenes services for transactions, customer checks and reports with PDF and CSV output, so staff could review bank and vault balances and fund transfers.",
+        "Built the online shop checkout and payment flows, including MCash and PayMongo payments with one-time-code checks, so customers could pay for and pick up their orders.",
+        "Maintained the database logic behind transfers, customer checks and reporting, so reports could roll up by branch, area and region."
+      ]
+    },
+    {
+      organization: "Content Management Platform",
+      role: "Project Lead / Software Engineer",
+      dates: "Jan 2025 - May 2025",
+      location: "CMS and marketplace operations platform",
+      summary: "",
+      bullets: [
+        "Led a content platform project and guided fellow developers, coordinating with the client's team, so their staff could review and manage marketplace content from one admin screen.",
+        "Handled the cloud deployment and automated builds, so updates could go live safely."
+      ]
+    },
+    {
+      organization: "HR and Payroll Platform",
+      role: "AI Product Engineer",
+      dates: "Feb 2026 - Jun 2026",
+      location: "Employee operations and payroll",
+      summary: "",
+      bullets: [
+        "Led development of an HR and payroll system with daily Agile standups and regular check-ins with the client, so companies could manage employees, time off and payroll in one system."
       ]
     },
     {
@@ -108,37 +131,37 @@ window.resumeData = {
       location: "Distributor operations and export workflows",
       summary: "",
       bullets: [
-        "Built AI-assisted operations workflows for account management, distributor reports, sales activity, purchase orders, consignment, exports, and admin controls."
+        "Led an operations tool, setting priorities with the team and explaining technical choices to non-technical staff, so sales teams could track accounts, visits and distributor reports in one place."
       ]
     },
     {
-      organization: "HRIS / Payroll Platform",
+      organization: "Healthcare Forms Companion",
       role: "AI Product Engineer",
-      dates: "Feb 2026 - Jun 2026",
-      location: "Employee operations, payroll, and RBAC workflows",
+      dates: "Jun 2026",
+      location: "Healthcare forms and PDF workflows",
       summary: "",
       bullets: [
-        "Built AI-assisted HRIS/payroll workflows across employee records, time tracking, leave approvals, payroll, RBAC, documentation, reports, and audit trails."
+        "Built patient and admin form workflows with secure previews and editable entries, so clinic staff could fill in and review forms without duplicates."
       ]
     },
     {
-      organization: "Financial Services Operations Platform",
+      organization: "Veterinary Clinic Platform",
       role: "Software Engineer",
-      dates: "Jan 2021 - Nov 2025",
-      location: "Financial operations and reporting workflows",
+      dates: "Jan 2026",
+      location: "Clinic access and permissions",
       summary: "",
       bullets: [
-        "Maintained KYC, remittance, ShopSafe, vault, reporting, receipt, and checkout workflows across React, Node/NestJS, MySQL, and stored procedures."
+        "Built role-based access for a veterinary clinic platform, so clinic owners, vets, staff and pet owners each see only the information meant for them."
       ]
     },
     {
-      organization: "CMS / Marketplace Admin Platform",
-      role: "Project Lead / Software Engineer",
-      dates: "Jan 2025 - May 2025",
-      location: "CMS and marketplace operations platform",
+      organization: "Education Planning Tool",
+      role: "Software Engineer",
+      dates: "Aug 2024 - Sep 2024",
+      location: "AI lesson planning",
       summary: "",
       bullets: [
-        "Led Strapi 5 CMS work for content, marketplace pages, opportunity settings, custom admin plugins, verification workflows, and TypeScript API integrations."
+        "Improved lesson document downloads and web pages, so teachers could download their lesson plans as Word documents."
       ]
     }
   ],
