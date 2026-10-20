@@ -92,7 +92,6 @@ window.resumeData = {
       organization: "Financial Services Platform",
       role: "Software Engineer",
       dates: "Jan 2021 - Nov 2025",
-      location: "Financial operations and reporting workflows",
       summary: "",
       bullets: [
         "Maintained a financial services platform for nearly five years, covering customer verification, money transfers, daily reports and receipts, so branch staff could finish their daily work more smoothly.",
@@ -105,7 +104,6 @@ window.resumeData = {
       organization: "Content Management Platform",
       role: "Project Lead / Software Engineer",
       dates: "Jan 2025 - May 2025",
-      location: "CMS and marketplace operations platform",
       summary: "",
       bullets: [
         "Led a content platform project and guided fellow developers, coordinating with the client's team, so their staff could review and manage marketplace content from one admin screen.",
@@ -116,7 +114,6 @@ window.resumeData = {
       organization: "HR and Payroll Platform",
       role: "AI Product Engineer",
       dates: "Feb 2026 - Jun 2026",
-      location: "Employee operations and payroll",
       summary: "",
       bullets: [
         "Led development of an HR and payroll system with daily Agile standups and regular check-ins with the client, so companies could manage employees, time off and payroll in one system."
@@ -126,7 +123,6 @@ window.resumeData = {
       organization: "Distributor Operations Platform",
       role: "AI Product Engineer",
       dates: "May 2026 - Jun 2026",
-      location: "Distributor operations and export workflows",
       summary: "",
       bullets: [
         "Led an operations tool, setting priorities with the team and explaining technical choices to non-technical staff, so sales teams could track accounts, visits and distributor reports in one place."
