@@ -31,14 +31,14 @@
     email.href = "mailto:" + profile.email;
     contact.appendChild(email);
 
-    var github = el("a", "", "GitHub");
+    var github = el("a", "", profile.github.replace(/^https?:\/\/(www\.)?/, ""));
     github.href = profile.github;
     github.rel = "noopener noreferrer";
     github.target = "_blank";
     contact.appendChild(github);
 
     if (profile.linkedin) {
-      var linkedin = el("a", "", "LinkedIn");
+      var linkedin = el("a", "", profile.linkedin.replace(/^https?:\/\/(www\.)?/, ""));
       linkedin.href = profile.linkedin;
       linkedin.rel = "noopener noreferrer";
       linkedin.target = "_blank";

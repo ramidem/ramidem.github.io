@@ -100,10 +100,10 @@ window.resumeData = {
       dates: "Jan 2021 - Nov 2025",
       summary: "",
       bullets: [
-        "Maintained a financial services platform for nearly five years using React, TypeScript, Node.js and MySQL on Google Cloud, so branch staff could verify customers, transfer money and run reports smoothly.",
-        "Built NestJS services for transactions, customer checks and PDF/CSV reports on Google Cloud with CI/CD, so staff could review balances and fund transfers.",
-        "Built the online shop checkout with Next.js and NestJS, including MCash and PayMongo payments, so customers could pay and pick up orders.",
-        "Maintained the MySQL stored procedures behind transfers and reports while mentoring teammates, reviewing code and acting on feedback, so reports rolled up by branch, area and region."
+        "Maintained a financial services platform for nearly five years (React, TypeScript, JavaScript, HTML, CSS, Node.js, SQL, Google Cloud), so branch staff could verify customers, transfer money and run reports smoothly.",
+        "Built microservices with RESTful APIs for transactions, customer checks and PDF/CSV reports, so staff could review balances and fund transfers.",
+        "Built the online shop checkout with MCash and PayMongo payments, so customers could pay and pick up orders.",
+        "Maintained the database logic behind transfers and reports (stored procedures, SQL) while mentoring teammates, reviewing code in Git and acting on feedback, so reports rolled up by branch and region."
       ]
     },
     {
@@ -112,8 +112,8 @@ window.resumeData = {
       dates: "Jan 2025 - May 2025",
       summary: "",
       bullets: [
-        "Led a content platform project using Strapi, TypeScript and React, collaborating with the client's team and guiding developers, so staff could manage marketplace content from one screen.",
-        "Handled Google Cloud deployment with App Engine, Cloud Build CI/CD, IAM and logs, so updates went live safely."
+        "Led a content platform from scratch (React), collaborating with the client's team and guiding developers, so staff could manage marketplace content from one screen.",
+        "Set up the Google Cloud deployment pipeline (Docker, CI/CD), so every change was checked before going live."
       ]
     },
     {
@@ -122,7 +122,7 @@ window.resumeData = {
       dates: "Feb 2026 - Jun 2026",
       summary: "",
       bullets: [
-        "Led AI-augmented development of an HR and payroll system using Next.js, TypeScript, Firebase and Google Cloud CI/CD, with daily Agile standups and client check-ins, so companies could manage staff, leave and payroll in one place."
+        "Led a full-stack HR and payroll system from scratch (TypeScript) using AI coding tools, with daily Agile standups, so companies could manage staff, leave and payroll in one place."
       ]
     },
     {
@@ -131,7 +131,7 @@ window.resumeData = {
       dates: "May 2026 - Jun 2026",
       summary: "",
       bullets: [
-        "Led AI-augmented development of an operations tool using Next.js, TypeScript and Firebase on Google Cloud with CI/CD, setting priorities with the team and explaining choices to non-technical staff, so sales teams could track accounts and reports in one place."
+        "Led a full-stack operations tool from scratch, setting priorities with the team and explaining choices to non-technical staff, so sales teams could track accounts and reports in one place."
       ]
     }
   ],
