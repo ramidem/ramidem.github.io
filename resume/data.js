@@ -113,13 +113,22 @@ window.resumeData = {
       ]
     },
     {
-      organization: "Other Client Platforms",
+      organization: "HR and Payroll Platform",
       role: "AI Product Engineer",
       dates: "Feb 2026 - Jun 2026",
-      location: "HR, payroll and distributor operations",
+      location: "Employee operations and payroll",
       summary: "",
       bullets: [
-        "Led development of an HR and payroll system with daily Agile standups and regular check-ins with the client, so companies could manage employees, time off and payroll in one system.",
+        "Led development of an HR and payroll system with daily Agile standups and regular check-ins with the client, so companies could manage employees, time off and payroll in one system."
+      ]
+    },
+    {
+      organization: "Distributor Operations Platform",
+      role: "AI Product Engineer",
+      dates: "May 2026 - Jun 2026",
+      location: "Distributor operations and export workflows",
+      summary: "",
+      bullets: [
         "Led an operations tool, setting priorities with the team and explaining technical choices to non-technical staff, so sales teams could track accounts, visits and distributor reports in one place."
       ]
     }
