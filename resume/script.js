@@ -117,25 +117,9 @@
     return article;
   }
 
-  function renderSkills() {
-    var list = document.querySelector("[data-skills]");
-    clear(list);
-
-    data.skills.forEach(function (skill) {
-      var row = el("tr");
-      var term = el("th", "", skill.group + ":");
-      var details = el("td", "", skill.items.join(", "));
-
-      row.appendChild(term);
-      row.appendChild(details);
-      list.appendChild(row);
-    });
-  }
-
   function render() {
     renderHeader();
     renderExperience();
-    renderSkills();
   }
 
   document.addEventListener("DOMContentLoaded", function () {

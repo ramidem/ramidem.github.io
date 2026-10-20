@@ -83,10 +83,8 @@ window.resumeData = {
       role: "Software Engineer",
       dates: "Nov 2020 - Present",
       location: "Remote",
-      summary: "",
-      bullets: [
-        "Built and maintained web products for clients across finance, retail, HR, healthcare and more, so their teams and customers could do their daily work in one place."
-      ]
+      summary: "Built and maintained web products for clients across finance, retail, HR and healthcare, so their teams and customers could do their daily work in one place.",
+      bullets: []
     },
     {
       organization: "Financial Services Platform",
@@ -94,10 +92,10 @@ window.resumeData = {
       dates: "Jan 2021 - Nov 2025",
       summary: "",
       bullets: [
-        "Maintained a financial services platform for nearly five years, covering customer verification, money transfers, daily reports and receipts, so branch staff could finish their daily work more smoothly.",
-        "Built the behind-the-scenes services for transactions, customer checks and reports with PDF and CSV output, so staff could review bank and vault balances and fund transfers.",
-        "Built the online shop checkout and payment flows, including MCash and PayMongo payments with one-time-code checks, so customers could pay for and pick up their orders.",
-        "Maintained the database logic behind transfers, customer checks and reporting, so reports could roll up by branch, area and region."
+        "Maintained a financial services platform for nearly five years using React, TypeScript, Node.js and MySQL on Google Cloud, covering customer verification, money transfers, reports and receipts, so branch staff could finish their daily work more smoothly.",
+        "Built NestJS services for transactions, customer checks and reports with PDF and CSV output, running on Google Cloud with CI/CD builds, so staff could review bank and vault balances and fund transfers.",
+        "Built the online shop checkout with Next.js and NestJS, including MCash and PayMongo payments with one-time-code checks, so customers could pay for and pick up their orders.",
+        "Maintained the MySQL stored procedures and SQL reports behind transfers, customer checks and reporting, so reports could roll up by branch, area and region."
       ]
     },
     {
@@ -106,8 +104,8 @@ window.resumeData = {
       dates: "Jan 2025 - May 2025",
       summary: "",
       bullets: [
-        "Led a content platform project and guided fellow developers, coordinating with the client's team, so their staff could review and manage marketplace content from one admin screen.",
-        "Handled the cloud deployment and automated builds, so updates could go live safely."
+        "Led a content management platform project using Strapi, TypeScript and React, guiding fellow developers and coordinating with the client's team, so their staff could review and manage marketplace content from one admin screen.",
+        "Handled the Google Cloud deployment with App Engine, Cloud Build CI/CD, IAM access and log monitoring, so updates could go live safely and issues were caught early."
       ]
     },
     {
@@ -116,7 +114,7 @@ window.resumeData = {
       dates: "Feb 2026 - Jun 2026",
       summary: "",
       bullets: [
-        "Led development of an HR and payroll system with daily Agile standups and regular check-ins with the client, so companies could manage employees, time off and payroll in one system."
+        "Led development of an HR and payroll system using Next.js, TypeScript, Firebase and Google Cloud with Cloud Build CI/CD, with daily Agile standups and regular check-ins with the client, so companies could manage employees, time off and payroll in one system."
       ]
     },
     {
@@ -125,7 +123,7 @@ window.resumeData = {
       dates: "May 2026 - Jun 2026",
       summary: "",
       bullets: [
-        "Led an operations tool, setting priorities with the team and explaining technical choices to non-technical staff, so sales teams could track accounts, visits and distributor reports in one place."
+        "Led an operations tool using Next.js, TypeScript and Firebase on Google Cloud with Cloud Build CI/CD, setting priorities with the team and explaining technical choices to non-technical staff, so sales teams could track accounts, visits and distributor reports in one place."
       ]
     }
   ],
