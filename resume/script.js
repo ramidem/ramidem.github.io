@@ -36,6 +36,14 @@
     github.rel = "noopener noreferrer";
     github.target = "_blank";
     contact.appendChild(github);
+
+    if (profile.linkedin) {
+      var linkedin = el("a", "", "LinkedIn");
+      linkedin.href = profile.linkedin;
+      linkedin.rel = "noopener noreferrer";
+      linkedin.target = "_blank";
+      contact.appendChild(linkedin);
+    }
   }
 
   function renderExperience() {
@@ -68,6 +76,10 @@
       article.className += " client-work";
     }
 
+    if (item.plain) {
+      article.className += " plain";
+    }
+
     if (item.url) {
       title.href = item.url;
       title.rel = "noopener noreferrer";
@@ -83,11 +95,18 @@
       heading.appendChild(el("p", "", item.location));
     }
 
-    meta.appendChild(el("p", "", item.role));
-    meta.appendChild(el("time", "", item.dates));
+    if (item.role) {
+      meta.appendChild(el("p", "", item.role));
+      meta.appendChild(el("time", "", item.dates));
+    } else if (item.dates) {
+      // No role line: show the dates inline with the title instead of on a row of their own.
+      heading.appendChild(el("p", "", item.dates));
+    }
 
     article.appendChild(heading);
-    article.appendChild(meta);
+    if (item.role) {
+      article.appendChild(meta);
+    }
 
     if (item.summary) {
       article.appendChild(el("p", "entry-summary", item.summary));
@@ -117,8 +136,26 @@
     return article;
   }
 
+  function renderEducation() {
+    var list = document.querySelector("[data-education]");
+    clear(list);
+
+    data.education.forEach(function (item) {
+      list.appendChild(renderEntry({
+        organization: item.institution,
+        role: item.degree,
+        dates: item.dates,
+        summary: "",
+        bullets: [],
+        highlights: [],
+        plain: true
+      }));
+    });
+  }
+
   function render() {
     renderHeader();
+    renderEducation();
     renderExperience();
   }
 

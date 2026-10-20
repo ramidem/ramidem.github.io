@@ -4,8 +4,16 @@ window.resumeData = {
     location: "Davao City, Philippines",
     email: "im.ramidem@gmail.com",
     github: "https://github.com/ramidem",
+    linkedin: "https://www.linkedin.com/in/med-aduh",
     updated: "2026-06-30"
   },
+  education: [
+    {
+      institution: "Western Mindanao State University",
+      degree: "BS, Mass Communication/Media Studies",
+      dates: "Graduated"
+    }
+  ],
   lenses: [
     {
       id: "general",
@@ -80,50 +88,50 @@ window.resumeData = {
     {
       organization: "Symph",
       url: "https://symph.co/",
-      role: "Software Engineer",
+      role: "Fullstack Software Engineer",
       dates: "Nov 2020 - Present",
       location: "Remote",
-      summary: "Built and maintained web products for clients across finance, retail, HR and healthcare, so their teams and customers could do their daily work in one place.",
+      summary: "Built and maintained client web products across finance, retail, HR and healthcare, so teams and customers could get their daily work done in one place.",
       bullets: []
     },
     {
       organization: "Financial Services Platform",
-      role: "Software Engineer",
+      role: "",
       dates: "Jan 2021 - Nov 2025",
       summary: "",
       bullets: [
-        "Maintained a financial services platform for nearly five years using React, TypeScript, Node.js and MySQL on Google Cloud, covering customer verification, money transfers, reports and receipts, so branch staff could finish their daily work more smoothly.",
-        "Built NestJS services for transactions, customer checks and reports with PDF and CSV output, running on Google Cloud with CI/CD builds, so staff could review bank and vault balances and fund transfers.",
-        "Built the online shop checkout with Next.js and NestJS, including MCash and PayMongo payments with one-time-code checks, so customers could pay for and pick up their orders.",
-        "Maintained the MySQL stored procedures and SQL reports behind transfers, customer checks and reporting, so reports could roll up by branch, area and region."
+        "Maintained a financial services platform for nearly five years using React, TypeScript, Node.js and MySQL on Google Cloud, so branch staff could verify customers, transfer money and run reports smoothly.",
+        "Built NestJS services for transactions, customer checks and PDF/CSV reports on Google Cloud with CI/CD, so staff could review balances and fund transfers.",
+        "Built the online shop checkout with Next.js and NestJS, including MCash and PayMongo payments, so customers could pay and pick up orders.",
+        "Maintained the MySQL stored procedures behind transfers and reports while mentoring teammates, reviewing code and acting on feedback, so reports rolled up by branch, area and region."
       ]
     },
     {
       organization: "Content Management Platform",
-      role: "Project Lead / Software Engineer",
+      role: "",
       dates: "Jan 2025 - May 2025",
       summary: "",
       bullets: [
-        "Led a content management platform project using Strapi, TypeScript and React, guiding fellow developers and coordinating with the client's team, so their staff could review and manage marketplace content from one admin screen.",
-        "Handled the Google Cloud deployment with App Engine, Cloud Build CI/CD, IAM access and log monitoring, so updates could go live safely and issues were caught early."
+        "Led a content platform project using Strapi, TypeScript and React, collaborating with the client's team and guiding developers, so staff could manage marketplace content from one screen.",
+        "Handled Google Cloud deployment with App Engine, Cloud Build CI/CD, IAM and logs, so updates went live safely."
       ]
     },
     {
       organization: "HR and Payroll Platform",
-      role: "AI Product Engineer",
+      role: "",
       dates: "Feb 2026 - Jun 2026",
       summary: "",
       bullets: [
-        "Led development of an HR and payroll system using Next.js, TypeScript, Firebase and Google Cloud with Cloud Build CI/CD, with daily Agile standups and regular check-ins with the client, so companies could manage employees, time off and payroll in one system."
+        "Led AI-augmented development of an HR and payroll system using Next.js, TypeScript, Firebase and Google Cloud CI/CD, with daily Agile standups and client check-ins, so companies could manage staff, leave and payroll in one place."
       ]
     },
     {
       organization: "Distributor Operations Platform",
-      role: "AI Product Engineer",
+      role: "",
       dates: "May 2026 - Jun 2026",
       summary: "",
       bullets: [
-        "Led an operations tool using Next.js, TypeScript and Firebase on Google Cloud with Cloud Build CI/CD, setting priorities with the team and explaining technical choices to non-technical staff, so sales teams could track accounts, visits and distributor reports in one place."
+        "Led AI-augmented development of an operations tool using Next.js, TypeScript and Firebase on Google Cloud with CI/CD, setting priorities with the team and explaining choices to non-technical staff, so sales teams could track accounts and reports in one place."
       ]
     }
   ],
