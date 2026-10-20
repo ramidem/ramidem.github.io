@@ -115,53 +115,14 @@ window.resumeData = {
       ]
     },
     {
-      organization: "HR and Payroll Platform",
+      organization: "Other Client Platforms",
       role: "AI Product Engineer",
       dates: "Feb 2026 - Jun 2026",
-      location: "Employee operations and payroll",
+      location: "HR, payroll and distributor operations",
       summary: "",
       bullets: [
-        "Led development of an HR and payroll system with daily Agile standups and regular check-ins with the client, so companies could manage employees, time off and payroll in one system."
-      ]
-    },
-    {
-      organization: "Distributor Operations Platform",
-      role: "AI Product Engineer",
-      dates: "May 2026 - Jun 2026",
-      location: "Distributor operations and export workflows",
-      summary: "",
-      bullets: [
+        "Led development of an HR and payroll system with daily Agile standups and regular check-ins with the client, so companies could manage employees, time off and payroll in one system.",
         "Led an operations tool, setting priorities with the team and explaining technical choices to non-technical staff, so sales teams could track accounts, visits and distributor reports in one place."
-      ]
-    },
-    {
-      organization: "Healthcare Forms Companion",
-      role: "AI Product Engineer",
-      dates: "Jun 2026",
-      location: "Healthcare forms and PDF workflows",
-      summary: "",
-      bullets: [
-        "Built patient and admin form workflows with secure previews and editable entries, so clinic staff could fill in and review forms without duplicates."
-      ]
-    },
-    {
-      organization: "Veterinary Clinic Platform",
-      role: "Software Engineer",
-      dates: "Jan 2026",
-      location: "Clinic access and permissions",
-      summary: "",
-      bullets: [
-        "Built role-based access for a veterinary clinic platform, so clinic owners, vets, staff and pet owners each see only the information meant for them."
-      ]
-    },
-    {
-      organization: "Education Planning Tool",
-      role: "Software Engineer",
-      dates: "Aug 2024 - Sep 2024",
-      location: "AI lesson planning",
-      summary: "",
-      bullets: [
-        "Improved lesson document downloads and web pages, so teachers could download their lesson plans as Word documents."
       ]
     }
   ],
