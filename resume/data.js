@@ -4,8 +4,6 @@ window.resumeData = {
     location: "Davao City, Philippines",
     email: "im.ramidem@gmail.com",
     github: "https://github.com/ramidem",
-    summary:
-      "Full-stack developer with nearly six years of experience building software that people use every day, from money transfers and online shops to HR and payroll. I turn what teams ask for into tools that work, and I use AI tools to deliver faster and more reliably.",
     updated: "2026-06-30"
   },
   lenses: [
