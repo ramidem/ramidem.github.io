@@ -89,15 +89,17 @@ window.resumeData = {
       organization: "Symph",
       url: "https://symph.co/",
       role: "Fullstack Software Engineer",
-      dates: "Nov 2020 - Present",
+      dates: "Nov 2020 – Present",
       location: "Remote",
-      summary: "Built and maintained client web products across finance, retail, HR and healthcare, so teams and customers could get their daily work done in one place.",
-      bullets: []
+      summary: "",
+      bullets: [
+        "Built and maintained client web products across finance, retail, HR and healthcare, so teams and customers could get their daily work done in one place."
+      ]
     },
     {
       organization: "Financial Services Platform",
       role: "",
-      dates: "Jan 2021 - Nov 2025",
+      dates: "Jan 2021 – Nov 2025",
       summary: "",
       bullets: [
         "Maintained a financial services platform for nearly five years (React, TypeScript, JavaScript, HTML, CSS, Node.js, SQL, Google Cloud), so branch staff could verify customers, transfer money and run reports smoothly.",
@@ -109,7 +111,7 @@ window.resumeData = {
     {
       organization: "Content Management Platform",
       role: "",
-      dates: "Jan 2025 - May 2025",
+      dates: "Jan 2025 – May 2025",
       summary: "",
       bullets: [
         "Led a content platform from scratch (React), collaborating with the client's team and guiding developers, so staff could manage marketplace content from one screen.",
@@ -119,16 +121,17 @@ window.resumeData = {
     {
       organization: "HR and Payroll Platform",
       role: "",
-      dates: "Feb 2026 - Jun 2026",
+      dates: "Feb 2026 – Jun 2026",
       summary: "",
       bullets: [
-        "Led a full-stack HR and payroll system from scratch (TypeScript) using AI coding tools, with daily Agile standups, so companies could manage staff, leave and payroll in one place, with each person seeing only what they need."
+        "Led a full-stack HR and payroll system from scratch (TypeScript) using AI coding tools, with daily Agile standups, so companies could manage staff, leave and payroll in one place.",
+        "Added role-based access (RBAC), so each person sees only the data they need across staff, leave and payroll."
       ]
     },
     {
       organization: "Distributor Operations Platform",
       role: "",
-      dates: "May 2026 - Jun 2026",
+      dates: "May 2026 – Jun 2026",
       summary: "",
       bullets: [
         "Led a full-stack operations tool from scratch, setting priorities with the team and explaining choices to non-technical staff, so sales teams could track accounts, visits and reports in one place and export them when needed."

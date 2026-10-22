@@ -231,7 +231,7 @@ h1 {
 
 .contact-line a:not(:last-child)::after {
   color: var(--muted);
-  content: "|";
+  content: "•";
   display: inline;
   padding: 0 5px;
   text-decoration: none;
