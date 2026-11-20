@@ -1,6 +1,6 @@
 # ramidem.github.io
 
-Static GitHub Pages site for `ramidem.github.io`.
+Static GitHub Pages site, served at `aduh.me` (`ramidem.github.io` redirects there).
 
 ## Structure
 
