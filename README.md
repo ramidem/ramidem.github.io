@@ -1,6 +1,6 @@
 # ramidem.github.io
 
-Static GitHub Pages site, served at `aduh.me` (`ramidem.github.io` redirects there).
+Static GitHub Pages site. Each HTML page sends the browser to the same path on https://aduh.me. This is not a custom domain.
 
 ## Structure
 

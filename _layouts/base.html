@@ -3,6 +3,9 @@
 {% include head.html %}
 
 <body>
+  {%- if jekyll.environment == "production" %}
+  <noscript><p><a href="{{ page.url | absolute_url }}">Continue to aduh.me</a></p></noscript>
+  {%- endif %}
   {{ content }}
 </body>
 
